@@ -2,95 +2,93 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { toast } from "sonner"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Label } from "@/components/ui/label";
+import  CardSolutions from "@/components/CardSolutions";
 
 export default function Home() {
   
   const handleClick = () => {
     toast.success("Hello, world!")
   }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-24">
-     <h1>Descubre RADIUS</h1>
-      <Button
-        onClick={handleClick}
-        variant="outline"
-      >
-          Comenzar
+      <h1>Descubre RADIUS</h1>
+      <Button onClick={handleClick} variant="outline">
+        Comenzar
       </Button>
-      <div className="w-full bg-gray-400">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center">
-          <Card className="w-[298px] h-[316px] p-6 col-span-1">
-            <CardHeader>
-              <div className="flex flex-row items-center gap-1">
-                <ChevronRight />
-                <Label className="text-base font-normal">Analytics</Label>
-              </div>
-              <div className="flex flex-row items-center gap-4">
-                <img 
-                  src="/img/data-solutions.png"
-                  alt="Data Solutions"
-                  width={60}
-                />
-                <CardTitle className="text-xl font-bold">
-                  Data Solutions
-                </CardTitle>
-                
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-1">
-                <li
-                  className="flex flex-row items-center gap-1"
-                >
-                  <ChevronRight />
-                  <Label className="text-base font-normal">
-                    Data Management
-                  </Label>
-                </li>
-                <li
-                  className="flex flex-row items-center gap-1"
-                >
-                  <ChevronRight />
-                  <Label className="text-base font-normal">
-                    Data Governance
-                  </Label>
-                </li>
-                <li
-                  className="flex flex-row items-center gap-1"
-                >
-                  <ChevronRight />
-                  <Label className="text-base font-normal">
-                    Data Architecture
-                  </Label>
-                </li>
-                <li
-                  className="flex flex-row items-center gap-1"
-                >
-                  <ChevronRight />
-                  <Label className="text-base font-normal">
-                    Data Warehousing
-                  </Label>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+      <div className="w-full bg-gray-400 bg-[url('https://descubreradius.com/wp-content/uploads/2023/09/back.jpg')] bg-cover bg-center pb-[130px]">
+        <p className="text-white flex justify-center font-bold text-3xl pt-5 my-12">Ofrecemos soluciones de:</p>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-10 place-items-center">
+          <CardSolutions
+            label="Analytics"
+            title="Data Solutions"
+            imgSrc="/img/data-solutions.png"
+            description={[
+              "Data Management",
+              "Data Governance",
+              "Data Architecture",
+              "Data Warehousing"
+            ]}
+          />
+          <CardSolutions
+            label="Analytics"
+            title="Analytics Solutions"
+            imgSrc="/img/analytics-solutions.png"
+            description={[
+              "Business Intelligence",
+              "Data Products (Software+Analytics)",
+              "Insights Frameworks",
+              "Advanced Analytics Solutions"
+            ]}
+          />
+          <CardSolutions
+            label="Analytics"
+            title="Consulting Services"
+            imgSrc="/img/consulting-services.png"
+            description={[
+              "Analytics Maturity Model",
+              "Data & Analytics Strategy",
+              "Data Driven Culture",
+            ]}
+          />
+          <CardSolutions
+            label="Tech"
+            title="Digital Solutions"
+            imgSrc="/img/digital-solutions.png"
+            description={[
+              "Diagnóstico, Análisis y Diseño de Soluciones",
+              "Aplicaciones corporativas a la Medida",
+              "Arquitectura de Soluciones y Aplicaciones",
+              "Desarrollo de Apps, Sitios Web y E-commerce",
+            ]}
+          />
+          <CardSolutions
+            label="Tech"
+            title="Automation Solutions"
+            imgSrc="/img/automatic-solutions.png"
+            description={[
+              "Automatización de Procesos",
+              "Digitalización, Sistematización y Manejo de Datos",
+              "Automatización de Pruebas",
+              "Plataformas de Gestión a la Medida (ERP,CRM, etc)",
+            ]}
+          />
+          <CardSolutions
+            label="Tech"
+            title="Consulting Services"
+            imgSrc="/img/consulting-services.png"
+            description={[
+              "Consultoría Tecnológica Integral",
+              "Consultoría en Transformación Digital",
+              "Gestión de Proyectos y/o Células Ágiles",
+              "Nearshoring de equipo especializado",
+            ]}
+          />
+          </div>
         </div>
       </div>
     </main>
   );
 }
-
-const ChevronRight = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-3">
-    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-  </svg>
-)
