@@ -1,0 +1,8 @@
+
+const Solutions = [{
+  "Analytics": [{
+    
+  }],
+  "Tech": [{
+  }]
+}]

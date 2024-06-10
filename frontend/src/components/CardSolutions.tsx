@@ -6,54 +6,53 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Label } from "@/components/ui/label";
-
-
-
-const ChevronRight = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-3">
-      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-    </svg>
-)
-
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface CardProps {
-    label: string;
     title: string;
     imgSrc: string;
-    description: string[];
+    description: {
+      title: string;
+      content: string;
+    }[];
   }
   
-const CardSolutions: React.FC<CardProps> = ({ label, title, imgSrc, description }) => {
+const CardSolutions: React.FC<CardProps> = ({ title, imgSrc, description }) => {
   return (
       <Card className="w-[375px] p-1 flex flex-col h-full">
-        <CardHeader>
-          <div className="flex flex-row items-center gap-1">
-            <ChevronRight />
-            <Label className="text-base font-normal">{label}</Label>
-          </div>
-          <div className="flex flex-row items-center gap-4">
-            <img 
-              src={imgSrc}
-              alt={title}
-              width={60}
-            />
-            <CardTitle className="text-xl font-bold">
-              {title}
-            </CardTitle>
-          </div>
+        <CardHeader className="flex flex-col items-center gap-2">
+          <img 
+            src={imgSrc}
+            alt={title}
+            width={60}
+          />
+          <CardTitle className="text-2xl font-bold">
+            {title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-3">
+          <ul className="space-y-3 flex flex-col items-center justify-center ">
             {description.map((item, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <div className="flex items-center pt-[2px]"> 
-                  <ChevronRight />
-                </div>
-                <Label className="text-base font-normal leading-none"> 
-                  {item}
-                </Label>
-              </li>
+              <TooltipProvider key={index} delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <li className="border-2 rounded-3xl py-1 px-3 border-tech-600 w-fit hover:border-tech-400 cursor-pointer text-tech-600 hover:text-tech-400">
+                      <Label className="text-lg font-normal leading-none cursor-pointer"> 
+                        {/* 1F7D50 */}
+                        {item.title}
+                      </Label>
+                    </li>
+                  </TooltipTrigger>
+                  <TooltipContent className="w-96 bg-gray-100 p-3">
+                    <p className="text-tech-600 text-sm">{item.content}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             ))}
           </ul>
         </CardContent>
