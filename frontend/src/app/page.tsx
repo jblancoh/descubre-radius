@@ -1,8 +1,6 @@
 'use client'
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { toast } from "sonner"
-import { Label } from "@/components/ui/label";
 import  CardSolutions from "@/components/CardSolutions";
 
 export default function Home() {
