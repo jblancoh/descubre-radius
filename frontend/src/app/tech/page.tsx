@@ -3,8 +3,8 @@ import BannerSolutions from "@/components/BannerSolutions";
 const Page = () => {
   return (
     <div>
-      <h1>Analytics</h1>
-      <BannerSolutions type="analytics" />
+      <h1>Tech</h1>
+      <BannerSolutions type="tech"/>
     </div>
   )
 }

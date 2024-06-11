@@ -19,10 +19,17 @@ const config = {
     },
     extend: {
       colors: {
-        tech: {
+        analytics: {
           400: "#3DF99F",
           500: "#1F7D50",
-          600: "#165937"
+          600: "#165937",
+          800: "#0D3C25",
+        },
+        tech: {
+          400: "#009BFF",
+          500: "#004E80",
+          600: "#004E80",
+          800: "#002D4C",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
