@@ -57,7 +57,7 @@ const CardSolutions: React.FC<CardProps> = ({ title, imgSrc, description, type }
               <TooltipProvider key={index} delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger>
-                    <li className={cn("border-2 rounded-3xl py-1 px-3 w-fit cursor-pointer hover:text-white", colorClasses[type].border, colorClasses[type].hoverBorder, colorClasses[type].text, colorClasses[type].hoverText)} >
+                    <li className={cn("border-2 rounded-3xl py-1 px-3 w-fit cursor-pointer hover:text-white", colorClasses[type].border, colorClasses[type].hoverBorder, colorClasses[type].text)} >
                       <Label className="text-lg font-normal leading-none cursor-pointer"> 
                         {item.title}
                       </Label>
