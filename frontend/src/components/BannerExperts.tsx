@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 
 
-const BannerInicio = () => {
+const BannerExperts = () => {
     return (
       <div className="container flex justify-center space-x-12 gap-[4rem] py-[400px]">
         {/* First Column */}
@@ -54,4 +54,4 @@ const BannerInicio = () => {
     );
   };
   
-  export default BannerInicio;
+  export default BannerExperts;

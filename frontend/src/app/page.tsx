@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 
-import BannerInicio from "@/components/BannerInicio";
+import BannerExperts from "@/components/BannerExperts";
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
           Analytics
         </Button>
       </Link>
-      <BannerInicio/>
+      <BannerExperts/>
       <BannerProvideSolutions />
     </main>
   );
