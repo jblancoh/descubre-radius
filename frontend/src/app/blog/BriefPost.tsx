@@ -29,7 +29,7 @@ const BriefPost = ({ post }: { post: BlogPost }) => {
           {post?.attributes?.categories?.data?.map((category) => {
             return <div
               key={category.attributes.name}
-              className="rounded-md w-fit p-2"
+              className="rounded-full w-fit p-2"
               style={{
                 backgroundColor: CategoryColors[category.attributes.name],
                 color: CategoryColorsText[category.attributes.name]
@@ -46,7 +46,7 @@ const BriefPost = ({ post }: { post: BlogPost }) => {
           </Label>
           <Label className="text-sm font-normal">
             {
-              `${dateFormated} `
+              `${post.attributes.created && dateFormated || ''} `
             }
             <Link href={`/author/${post?.attributes?.writer?.data?.id}`}>
               {post.attributes?.writer?.data?.attributes?.name}

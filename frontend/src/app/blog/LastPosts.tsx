@@ -66,8 +66,8 @@ const LastPosts:FC = async() => {
           day: 'numeric'
         })
 
-        return <>
-          <div key={post.id} className="flex flex-row min-h-64 my-4">
+        return <div key={post.id}>
+          <div className="flex flex-row min-h-64 my-4">
             <img src={
               post.attributes?.cover?.data?.attributes?.url
                 ? `${process.env.NEXT_PUBLIC_API_URL}${post.attributes?.cover?.data?.attributes?.url}`
@@ -80,7 +80,7 @@ const LastPosts:FC = async() => {
                 {post?.attributes?.categories?.data?.map((category) => {
                   return <div
                     key={category.attributes.name}
-                    className="rounded-md w-fit p-2"
+                    className="rounded-full w-fit p-2"
                     style={{
                       backgroundColor: CategoryColors[category.attributes.name],
                       color: CategoryColorsText[category.attributes.name]
@@ -100,7 +100,7 @@ const LastPosts:FC = async() => {
               </Label>
               <Label className="text-sm font-normal">
                 {
-                  `${dateFormated} `
+                  `${post.attributes.created && dateFormated || ''} `
                 }
                 <Link href={`/author/${post?.attributes?.writer?.data?.id}`}>
                   {post.attributes?.writer?.data?.attributes?.name}
@@ -109,7 +109,7 @@ const LastPosts:FC = async() => {
             </div>
           </div>
           <Separator />
-        </>
+        </div>
       }
       )}
     </div>
