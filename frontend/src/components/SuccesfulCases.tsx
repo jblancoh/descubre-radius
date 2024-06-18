@@ -31,7 +31,7 @@ const SuccesfulCases: FC = () => {
             </CardHeader>
             <CardContent>
               <Label className="font-bold text-xl leading-10">App Omnical</Label>
-              <p className="text-xl md:text-sm">Desarrollo ad hoc Web y Mobile de una empresa Financiera para realizar transacciones SPEI en México de personas morales, la versión Mobile para personas físicas o transacciones "card to card". Solución escalable, omnicanal siguiendo las normativas y el cumplimiento de seguridad del dato(GRC).</p>
+              <p className="text-xl md:text-sm">{`Desarrollo ad hoc Web y Mobile de una empresa Financiera para realizar transacciones SPEI en México de personas morales, la versión Mobile para personas físicas o transacciones "card to card". Solución escalable, omnicanal siguiendo las normativas y el cumplimiento de seguridad del dato(GRC).`}</p>
             </CardContent>
             <CardFooter >
               <img src="/img/logo-aws.png" alt="aws" className="w-8 lg:w-12"/>
