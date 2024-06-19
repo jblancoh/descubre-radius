@@ -116,3 +116,4 @@ build
 ############################
 
 pnpm-lock.yaml
+.env.example
