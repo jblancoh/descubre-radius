@@ -70,7 +70,7 @@ const LastPosts:FC = async() => {
           <div className="flex flex-row min-h-64 my-4">
             <img src={
               post.attributes?.cover?.data?.attributes?.url
-                ? `${process.env.NEXT_PUBLIC_API_URL}${post.attributes?.cover?.data?.attributes?.url}`
+                ? post.attributes?.cover?.data?.attributes?.url
                 : "https://via.placeholder.com/150"
             } alt={post.attributes?.title}
               className="w-40 h-40 object-cover rounded-md m-4 sm:w-48"

@@ -17,7 +17,7 @@ const BriefPost = ({ post }: { post: BlogPost }) => {
       <div className="col-span-1 flex justify-center items-center">
         <img src={
           post.attributes?.cover?.data?.attributes?.url
-            ? `${process.env.NEXT_PUBLIC_API_URL}${post.attributes?.cover?.data?.attributes?.url}`
+            ? post.attributes?.cover?.data?.attributes?.url
             : "https://via.placeholder.com/150"
         } alt={post.attributes?.title}
           className="md:w-80 h-80 object-cover rounded-md m-4"
