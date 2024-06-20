@@ -45,5 +45,8 @@ module.exports = ({env}) => ({
         defaultReplyTo: 'zlatanjon@hotmail.com',
       }
     }
-  }
+  },
+  ckeditor: {
+    enabled: true,
+  },
 });

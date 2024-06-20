@@ -4,7 +4,8 @@
   "info": {
     "singularName": "writer",
     "pluralName": "writers",
-    "displayName": "Writer"
+    "displayName": "Writer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "avatar": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "posts": {
       "type": "relation",
