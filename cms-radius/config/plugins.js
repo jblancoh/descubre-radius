@@ -27,5 +27,23 @@ module.exports = ({env}) => ({
         },
       }
     },
+  },
+  email: {
+    config: {
+      provider: 'nodemailer',
+      providerOptions: {
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        auth: {
+          user: 'zlatanjon@hotmail.com',
+          pass: 'tmpawqphfodwsysf'
+        },
+        secure: false,
+      },
+      settings: {
+        defaultFrom: 'zlatanjon@hotmail.com',
+        defaultReplyTo: 'zlatanjon@hotmail.com',
+      }
+    }
   }
 });
