@@ -20,9 +20,6 @@
       "relation": "oneToOne",
       "target": "api::writer.writer"
     },
-    "content": {
-      "type": "richtext"
-    },
     "cover": {
       "type": "media",
       "multiple": false,
@@ -49,6 +46,14 @@
     },
     "created": {
       "type": "date"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

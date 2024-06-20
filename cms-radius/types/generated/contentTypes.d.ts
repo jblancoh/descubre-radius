@@ -877,7 +877,6 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::writer.writer'
     >;
-    content: Attribute.RichText;
     cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     categories: Attribute.Relation<
       'api::post.post',
@@ -887,6 +886,14 @@ export interface ApiPostPost extends Schema.CollectionType {
     slug: Attribute.UID<'api::post.post', 'title'>;
     description: Attribute.Text;
     created: Attribute.Date;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
