@@ -824,6 +824,41 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactMessageContactMessage extends Schema.CollectionType {
+  collectionName: 'contact_messages';
+  info: {
+    singularName: 'contact-message';
+    pluralName: 'contact-messages';
+    displayName: 'ContactMessage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.Email;
+    subject: Attribute.String;
+    created: Attribute.Date;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-message.contact-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-message.contact-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -868,6 +903,7 @@ export interface ApiWriterWriter extends Schema.CollectionType {
     singularName: 'writer';
     pluralName: 'writers';
     displayName: 'Writer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -918,6 +954,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::post.post': ApiPostPost;
       'api::writer.writer': ApiWriterWriter;
     }
