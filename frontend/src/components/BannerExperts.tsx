@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 const BannerExperts = () => {
     return (
-      <div className="container flex justify-center space-x-12 gap-[4rem] py-[400px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 container justify-center space-x-12 gap-[4rem] md:py-96">
         {/* First Column */}
-        <div className="w-1/3 space-y-8">
+        <div className="col-span-1 space-y-8">
           <div>
             <h2 className="text-3xl font-bold text-red-500">Somos expertos</h2>
             <p className="mt-4 text-gray-700">
@@ -30,7 +30,7 @@ const BannerExperts = () => {
         </div>
         
         {/* Second Column */}
-        <div className="w-1/3 space-y-8 ml-2">
+        <div className="col-span-1 space-y-8 ml-2">
           <div>
             <img src="/img/Radius-analytics.png" alt="RADIUS Analytics" />
             <p className="mt-4 text-gray-700 pb-5">
