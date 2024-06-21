@@ -1,16 +1,17 @@
 module.exports = [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
   {
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
+        useDefaults: true,
         directives: {
           'default-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https://strapiradiusbucket.s3.us-east-2.amazonaws.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'https://strapiradiusbucket.s3.us-east-2.amazonaws.com'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https://strapiradiusbucket.s3.us-east-2.amazonaws.com', "https://cdnjs.cloudflare.com"],
+          'media-src': ["'self'", 'data:', 'blob:', 'https://strapiradiusbucket.s3.us-east-2.amazonaws.com', "https://cdnjs.cloudflare.com"],
           'connect-src': ["'self'", 'https:'],
+          "script-src": ["https://cdnjs.cloudflare.com"],
         },
       },
     },

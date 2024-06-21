@@ -13,19 +13,30 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "email": {
-      "type": "email"
-    },
-    "subject": {
-      "type": "string"
+      "type": "email",
+      "required": true
     },
     "created": {
       "type": "date"
     },
     "message": {
-      "type": "text"
+      "type": "text",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "customField",
+      "customField": "plugin::strapi-phone-validator.phone",
+      "options": {
+        "country": "mx"
+      }
     }
   }
 }

@@ -866,11 +866,18 @@ export interface ApiContactMessageContactMessage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    email: Attribute.Email;
-    subject: Attribute.String;
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
     created: Attribute.Date;
-    message: Attribute.Text;
+    message: Attribute.Text & Attribute.Required;
+    company: Attribute.String & Attribute.Required;
+    phone: Attribute.String &
+      Attribute.CustomField<
+        'plugin::strapi-phone-validator.phone',
+        {
+          country: 'mx';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
