@@ -15,13 +15,13 @@ const BannerMenu = () => {
                     <img src="/img/radius-logo.svg" alt="Radius Logo" />
                 </div>
             </div>
-            <div className="relative w-full h-screen">
-                <img
-                    src="/img/bg/Radiusagencia.jpg"
-                    alt="Background"
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:top-1/2 lg:left-auto lg:right-1/4 lg:transform lg:-translate-y-1/2 lg:w-1/5 w-4/5 bg-red-500 p-6 rounded-lg shadow-lg text-white text-center">
+            <div 
+              className="w-full h-[520px] max-h-[520px] bg-center bg-cover z-0 grid grid-cols-4 lg:grid-cols-3 px-4 md:pr-20 lg:pr-48 content-center"
+              style={{ backgroundImage: "url('/img/bg/Radiusagencia.jpg')" }}
+            >
+                <div 
+                  className="bg-red-500 p-6 rounded-lg shadow-lg text-white text-center col-span-4 md:col-span-2 md:col-start-3 lg:col-start-3 lg:col-span-1 "
+                  >
                     <h2 className="mb-4 text-xl">Somos una firma consultora de tecnología que se ha especializado en proveer servicios de:</h2>
                     <ul className="space-y-2 flex flex-col items-stretch">
                         {services.map(service => (
