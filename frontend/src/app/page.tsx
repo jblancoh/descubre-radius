@@ -20,7 +20,7 @@ export default function Home() {
       </Link>
       <BannerExperts/>
       <BannerProvideSolutions/>
-      {/* <SectorExperience />  */}
+      <SectorExperience /> 
 
     </main>
   );
