@@ -5,9 +5,10 @@ export interface SharedMetaSocial extends Schema.Component {
   info: {
     displayName: 'metaSocial';
     icon: 'project-diagram';
+    description: '';
   };
   attributes: {
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter', 'LinkedIn']> &
       Attribute.Required;
     title: Attribute.String &
       Attribute.Required &
