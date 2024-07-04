@@ -1,4 +1,5 @@
 'use client';
+import { FC, useEffect, useState } from "react";
 import BriefPost from "./BriefPost";
 import { BlogPost } from "./LastPosts";
 import {
@@ -26,8 +27,19 @@ const getBlogData = async (): Promise<{ data: any, error: any }> => {
   }
 }
 
-const CarouselPost = async() => {
-  const { data, error } = await getBlogData();
+const CarouselPost: FC = () => {
+  const [data, setData] = useState<BlogPost[]>([]);
+  const [error, setError] = useState()
+
+  useEffect(() => {
+    const getData = async () => {
+      const {data, error} = await getBlogData();
+      setData(data);
+    }
+    
+    getData()
+  }, []);
+    
   return (
     <Carousel
       opts={{
