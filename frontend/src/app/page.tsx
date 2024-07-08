@@ -1,6 +1,7 @@
 import BannerMenu from "@/components/BannerMenu";
 import BannerProvideSolutions from "@/components/BannerProvideSolutions";
 import SectorExperience from "@/components/SectorExperience";
+import BannerBlogArticles from "@/components/BannerBlogArticles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ export default function Home() {
       <BannerExperts/>
       <BannerProvideSolutions/>
       <SectorExperience /> 
-
+      <BannerBlogArticles /> 
     </main>
   );
 }
