@@ -56,7 +56,7 @@ const getBlogData = async (): Promise<{ data: any, error: any }> => {
 const LastPosts:FC = async() => {
   const { data, error } = await getBlogData();
   return (
-    <div className="col-span-1 md:col-span-2">
+    <>
       <Label className="text-3xl text-red-500 font-bold">Ultimos artículos</Label>
       {data && data.map((post: BlogPost) => {
         const date = post.attributes.created ? post.attributes.created.split('/') : [];
@@ -65,13 +65,12 @@ const LastPosts:FC = async() => {
           month: 'long',
           day: 'numeric'
         })
-
         return <div key={post.id}>
           <div className="flex flex-row min-h-64 my-4">
             <img src={
               post.attributes?.cover?.data?.attributes?.url
                 ? post.attributes?.cover?.data?.attributes?.url
-                : "https://via.placeholder.com/150"
+                : "https://placehold.co/250"
             } alt={post.attributes?.title}
               className="w-40 h-40 object-cover rounded-md m-4 sm:w-48"
             />
@@ -112,7 +111,7 @@ const LastPosts:FC = async() => {
         </div>
       }
       )}
-    </div>
+    </>
   )
 }
 

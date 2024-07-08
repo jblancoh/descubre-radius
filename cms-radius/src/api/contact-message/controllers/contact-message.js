@@ -25,7 +25,7 @@ module.exports = createCoreController('api::contact-message.contact-message', ({
       await strapi.plugin('email').service('email').send({
         to: 'zlatanjon@hotmail.com',
         from: 'zlatanjon@hotmail.com',
-        subject: `Nuevo mensaje de ${name} - ${company}`,
+        subject: `Nuevo mensaje de ${name} - ${company} - ${email || phone}`,
         text: message,
       });
 
