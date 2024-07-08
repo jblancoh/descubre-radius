@@ -1,6 +1,7 @@
 import BannerMenu from "@/components/BannerMenu";
 import BannerProvideSolutions from "@/components/BannerProvideSolutions";
 import SectorExperience from "@/components/SectorExperience";
+import BannerBlogArticles from "@/components/BannerBlogArticles";
 import WhyRadius from "@/components/WhyRadius";
 
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,8 @@ export default function Home() {
       <BannerExperts/>
       <BannerProvideSolutions/>
       <SectorExperience /> 
+      <BannerBlogArticles /> 
       <WhyRadius />
-
     </main>
   );
 }
