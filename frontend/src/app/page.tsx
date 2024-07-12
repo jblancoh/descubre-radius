@@ -5,6 +5,7 @@ import BannerBlogArticles from "@/components/BannerBlogArticles";
 import WhyRadius from "@/components/WhyRadius";
 
 import { Button } from "@/components/ui/button";
+import DiscoverMaturityLevel from "@/components/DiscoverMaturityLevel";
 import Link from "next/link";
 
 
@@ -24,6 +25,7 @@ export default function Home() {
       <BannerExperts/>
       <BannerProvideSolutions/>
       <SectorExperience /> 
+      <DiscoverMaturityLevel />
       <BannerBlogArticles /> 
       <WhyRadius />
     </main>
