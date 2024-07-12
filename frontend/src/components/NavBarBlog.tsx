@@ -1,6 +1,5 @@
 'use client'
 import { FC } from "react";
-import { Button } from "./ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 import {
   NavigationMenu,
@@ -38,6 +37,21 @@ const NavBarBlog: FC = () => {
                   <Link href="/">
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Inicio
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/tech">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Tecnologia
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/analytics">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Analitica
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/blog">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Blog
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuContent>

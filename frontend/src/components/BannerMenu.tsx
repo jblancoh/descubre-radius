@@ -10,11 +10,6 @@ const linkUrl = "# Nosotros link";  // Replace with your actual target URL
 const BannerMenu = () => {
     return (
         <>
-            <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50 py-3">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <img src="/img/radius-logo.svg" alt="Radius Logo" />
-                </div>
-            </div>
             <div 
               className="w-full h-[520px] max-h-[520px] bg-center bg-cover z-0 grid grid-cols-4 lg:grid-cols-3 px-4 md:pr-20 lg:pr-48 content-center"
               style={{ backgroundImage: "url('/img/bg/Radiusagencia.jpg')" }}
