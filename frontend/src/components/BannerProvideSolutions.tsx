@@ -2,7 +2,7 @@ import CardProvideSolutions from "./CardProvideSolutions"
 
 const BannerProvideSolutions = () => {
   return <div className="w-full bg-gray-400 bg-[url('https://descubreradius.com/wp-content/uploads/2023/09/back.jpg')] bg-cover bg-center pb-[130px]">
-      <p className="text-white flex justify-center font-bold text-3xl pt-5 my-12">Ofrecemos soluciones de:</p>
+      <p className="text-white flex justify-center font-bold text-3xl pt-5 my-8">Ofrecemos soluciones de:</p>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-10 place-items-center">
           <CardProvideSolutions
