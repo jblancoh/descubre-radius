@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import PopularArticles from "../PopularArticles";
 
 type BlogPostPageProps = {
   params: {
@@ -6,21 +8,64 @@ type BlogPostPageProps = {
   };
 };
 
-const BlogPostPage: React.FC<BlogPostPageProps> = ({params}) => {
+const fetchBlogPost = async (slug: string): Promise<{ data: any, error: any }> => {
+  try {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/posts?filters[slug][$eq]=${slug}&populate[0]=writer&populate[1]=cover`;
+    
+    const response = await fetch(
+      url, {
+      headers: {
+        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+      },
+      cache: "no-store"
+    });
+    const result = await response.json();
+    return { data: result?.data, error: null };
+  } catch (error) {
+    return { data: null, error };
+  }
+}
+
+const BlogPostPage: React.FC<BlogPostPageProps> = async ({params}) => {
  const { slug } = params;
 
-  useEffect(() => {
-    // Fetch blog post data based on the slug
-    // You can make an API call here or fetch data from a database
-    // Example: fetchBlogPost(slug);
-    console.log("🚀 ~ slug:", slug)
-  }, [slug]);
-
+  const post = await fetchBlogPost(slug);
+  const postContent = post.data[0]?.attributes.content;
+  const postWriter = post.data[0]?.attributes.writer;
+  const postTitle = post.data[0]?.attributes.title;
+  const postCover = post.data[0]?.attributes.cover;
+  const dateString = post.data[0]?.attributes.created || '';
+  const normalizedDateString = dateString.replace(/[-\\]/g, '-');
+  const date = normalizedDateString.split('-');
+  const dateFormated = new Date(Number(date[0]), Number(date[1]) - 1, Number(date[2])).toLocaleDateString('es-MX', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
   return (
-    <div>
-      <h1>Blog Post Page</h1>
-      <p>Slug: {slug}</p>
-      {/* Render the blog post content here */}
+    <div className="container mx-auto my-8 bg-white">
+      <div className="text-center flex flex-col space-y-4 my-4">
+        <Label className="text-3xl leading-8 font-bold">
+          {postTitle}
+        </Label>
+        <Label className="text-sm font-normal">
+          {
+            `${dateFormated} `
+          }
+          <Link href={`/author/${postWriter?.data?.id}`}>
+            {postWriter?.data?.attributes?.name}
+          </Link>
+        </Label>
+        <img src={postCover?.data?.attributes?.url} alt={postTitle} />
+      </div>
+      <div className="grid grid-cols-4 gap-4">
+        <div className="col-span-4 md:col-span-3">
+          <div dangerouslySetInnerHTML={{ __html: postContent }} />
+        </div>
+        <div className="hidden col-span-1 md:block">
+          <PopularArticles />
+        </div>
+      </div>
     </div>
   );
 };
