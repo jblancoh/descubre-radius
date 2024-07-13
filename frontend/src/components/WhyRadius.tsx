@@ -19,7 +19,7 @@ interface Brand {
 
 const WhyRadius = () => {
     return ( 
-            <div className="bg-[#201038] text-white w-full md:py-80">
+            <div className="bg-[#201038] text-white w-full py-12">
               <div className="container mx-auto p-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-8">
                   <div className="flex flex-col justify-center max-w-xs mx-auto">

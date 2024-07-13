@@ -1,4 +1,3 @@
-import NavBarBlog from "@/components/NavBarBlog";
 import React, { FC } from "react";
 
 const Layout = ({ children,}: {
@@ -6,7 +5,6 @@ const Layout = ({ children,}: {
 }) => {
   return (
     <div>
-      <NavBarBlog />
       {children}
     </div>
   );

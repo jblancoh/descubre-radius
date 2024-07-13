@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const BannerExperts = () => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 container justify-center space-x-12 gap-[4rem] md:py-96">
+      <div className="grid grid-cols-1 md:grid-cols-2 container justify-center space-x-12 gap-[4rem] py-12">
         {/* First Column */}
         <div className="col-span-1 space-y-8">
           <div>

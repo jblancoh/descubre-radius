@@ -29,8 +29,10 @@ const PopularArticles: FC = async() => {
     </CardHeader>
     <CardContent>
       {data && data.map((post: BlogPost) => {
-        const date = post.attributes.created ? post.attributes.created.split('/') : [];
-        const dateFormated = date.length > 0 ? new Date(Number(date[2]), Number(date[1]) - 1, Number(date[0])).toLocaleDateString('es-MX', {
+        const dateString = post.attributes.created ? post.attributes.created : '';
+        const normalizedDateString = dateString.replace(/[-\\]/g, '-'); // Reemplaza tanto '-' como '\' con '-'
+        const date = normalizedDateString.split('-');
+        const dateFormated = date.length > 0 ? new Date(Number(date[0]), Number(date[1]) - 1, Number(date[2])).toLocaleDateString('es-MX', {
           year: 'numeric',
           month: 'long',
           day: 'numeric'
