@@ -1,16 +1,15 @@
 'use client'
 import { FC } from "react";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const NavBarBlog: FC = () => {
 
@@ -25,39 +24,51 @@ const NavBarBlog: FC = () => {
         />
         </div>
         <div className="flex space-x-4 items-center my-2 text-white">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className="rounded-full bg-destructive data-[state='open']:bg-destructive/80 hover:bg-destructive/80"
-                >
-                  <HamburgerMenuIcon className="w-6 h-6 cursor-pointer" />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <Link href="/">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Inicio
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/tech">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Tecnologia
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/analytics">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Analitica
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/blog">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Blog
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className="rounded-full bg-destructive hover:bg-destructive/80 p-2"
+            >
+              <HamburgerMenuIcon className="w-6 h-6 cursor-pointer" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-destructive text-white border-destructive">
+              <Link href="/">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Inicio
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+              <Link href="/aboutus">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Nosotros
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+              <Link href="/tech">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Radius Tech
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+              <Link href="/analytics">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Radius Analytics
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+              <Link href="/blog">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Blog
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+              <Link href="/contact">
+                <DropdownMenuLabel className="hover:opacity-80 rounded-lg">
+                  Contacto
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+              </Link>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>
