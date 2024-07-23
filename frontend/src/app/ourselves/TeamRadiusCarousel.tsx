@@ -43,7 +43,7 @@ const TeamRadiusCarousel: FC = () => {
     
   return (
     <div
-      className="flex flex-col justify-center items-center bg-blue-500 pt-12 pb-20 text-white px-32"
+      className="flex flex-col justify-center items-center bg-red-500 pt-12 pb-20 text-white px-32"
     >
       <Label className="text-2xl leading-8 font-bold">
         Equipo Radius
