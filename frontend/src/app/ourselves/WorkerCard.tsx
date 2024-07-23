@@ -28,7 +28,7 @@ const WorkerCard = ({ worker }: { worker: WorkerType }) => {
       } alt={workerName}
         className="md:w-60 h-60 object-cover m-4"
       />
-      <Label className="text-2xl leading-8 font-bold">
+      <Label className="text-xl leading-8 font-bold">
         {workerName}
       </Label>
       <Label className="text-sm font-normal">

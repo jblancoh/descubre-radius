@@ -10,6 +10,7 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import WorkerCard, { WorkerType } from "@/app/ourselves/WorkerCard";
 import { Label } from "@/components/ui/label";
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const getWorker = async (): Promise<{ data: any, error: any }> => {
   try {
@@ -33,13 +34,8 @@ const TeamRadiusCarousel: FC = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const customData = []
       const {data, error} = await getWorker();
-      console.log('data >>>>>>> ', data);
-      for(let i = 0; i < 10; i++) {
-        customData.push(data[0]);
-      }
-      setData(customData);
+      setData(data);
     }
     
     getData()
@@ -58,23 +54,29 @@ const TeamRadiusCarousel: FC = () => {
       <Carousel
         opts={{
           loop: true,
+          align: 'start'
         }}
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: 3000,
           })
         ]}
+        className="w-full"
       >
         <CarouselContent>
-        {data && data.map((worker: WorkerType) => {
-          return <CarouselItem key={worker?.id} className="basis-80">
-            <WorkerCard worker={worker} key={worker.id} />
+        {data && data.map((worker: WorkerType, index) => {
+          return <CarouselItem key={index} className="basis-1/4 mt-8 mr-">
+            <WorkerCard worker={worker} key={index} />
           </CarouselItem>
           })
         }
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious variant='ghost' size='icon'>
+          <ChevronLeft className="h-20 w-20" />
+        </CarouselPrevious>
+        <CarouselNext variant='ghost' size='icon'>
+          <ChevronRight className="h-10 w-10" />
+        </CarouselNext>
       </Carousel>
     </div>
   )
