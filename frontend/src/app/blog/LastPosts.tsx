@@ -1,9 +1,19 @@
+'use client';
 import { Label } from "@/components/ui/label";
 import { CategoryColors, CategoryColorsText } from "@/lib/colors";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator"
-import { FC } from "react";
-
+import { FC, use, useState, useCallback, useEffect } from "react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+ 
 export type BlogPost = {
   id: string;
   attributes: {
@@ -38,24 +48,49 @@ export type BlogPost = {
 }
 
 
-const getBlogData = async (): Promise<{ data: any, error: any }> => {
+const getBlogData = async (currentPage: number = 1): Promise<{ data: any, pagination: any, error: any }> => {
   try {
+    const fieldSelection = 'fields[0]=title&fields[1]=description&fields[2]=created&fields[3]=slug&populate[0]=cover&populate[1]=categories&populate[2]=writer';
+    const pagination = `pagination[page]=${currentPage}&pagination[pageSize]=10`;
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/posts?sort=id&fields[0]=title&fields[1]=description&fields[2]=created&fields[3]=slug&populate[0]=cover&populate[1]=categories&populate[2]=writer`, {
+      `${process.env.NEXT_PUBLIC_API_URL}/api/posts?sort=id&${fieldSelection}&${pagination}`, {
       headers: {
         "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
       },
       cache: "no-store"
     });
     const result = await response.json();
-    return { data: result?.data, error: null };
+    return { data: result?.data, pagination: result?.meta?.pagination, error: null };
   } catch (error) {
-    return { data: null, error };
+    return { data: null, pagination: null, error };
   }
 }
 
-const LastPosts:FC = async() => {
-  const { data, error } = await getBlogData();
+const setStepper = (currentPage?: number, totalPages?: number): (number|undefined)[] => {
+  if (!currentPage || !totalPages) return [];
+  const pagesToShow = currentPage >= totalPages - 2 
+    ? [totalPages - 2, totalPages - 1, totalPages]
+    : [currentPage, currentPage + 1, currentPage + 2];
+  const stepper = pagesToShow.map((page) => {
+    if (page <= totalPages) {
+      return page;
+    }
+  });
+  return stepper;
+}
+
+const LastPosts:FC = () => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pageCount, setPageCount] = useState<number>(1);
+  const [data, setData] = useState<BlogPost[]>([]);
+  useEffect(() => {
+    getBlogData(currentPage).then((response) => {
+      setData(response.data);
+      setPageCount(response.pagination.pageCount);
+    });
+  }, [currentPage]);
+  const stepper = setStepper(currentPage, pageCount);
+
   return (
     <>
       <Label className="text-3xl text-red-500 font-bold">Ultimos artículos</Label>
@@ -118,6 +153,37 @@ const LastPosts:FC = async() => {
         </div>
       }
       )}
+      <Pagination className="mt-5">
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage - 1 <= 0}/>
+          </PaginationItem>
+          {stepper.map((page) => {
+            if (!page) return;
+            const isActive = currentPage === page;
+            return (
+              <PaginationItem>
+                <PaginationLink 
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  isActive={isActive}
+                  aria-disabled={isActive}
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            )
+          })}
+          {stepper.findLast((page) => page) !== pageCount && (
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+          )}
+          <PaginationItem>
+            <PaginationNext onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage + 1 > pageCount}/>
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </>
   )
 }
