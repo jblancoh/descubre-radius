@@ -15,7 +15,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const getWorker = async (): Promise<{ data: any, error: any }> => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/workers?populate=avatar&pagination[pageSize]=3`, {
+      `${process.env.NEXT_PUBLIC_API_URL}/api/workers?filters[status][$eq]=true&populate=avatar&pagination[pageSize]=3`, {
       headers: {
         "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
       },
