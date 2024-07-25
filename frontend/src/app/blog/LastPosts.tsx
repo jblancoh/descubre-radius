@@ -68,7 +68,7 @@ const getBlogData = async (currentPage: number = 1): Promise<{ data: any, pagina
 
 const setStepper = (currentPage?: number, totalPages?: number): (number|undefined)[] => {
   if (!currentPage || !totalPages) return [];
-  const pagesToShow = currentPage >= totalPages - 2 
+  const pagesToShow = currentPage > 3 && (currentPage >= totalPages - 2 )
     ? [totalPages - 2, totalPages - 1, totalPages]
     : [currentPage, currentPage + 1, currentPage + 2];
   const stepper = pagesToShow.map((page) => {
