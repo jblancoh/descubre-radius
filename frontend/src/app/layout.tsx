@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/sonner"
-import NavBarBlog from "@/components/NavBarBlog";
+import NavBar from "@/components/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
@@ -29,7 +29,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <NavBarBlog />
+        <NavBar />
         {children}
         <Footer />
         <Toaster />

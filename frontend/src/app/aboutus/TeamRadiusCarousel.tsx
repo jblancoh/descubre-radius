@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import WorkerCard, { WorkerType } from "@/app/ourselves/WorkerCard";
+import WorkerCard, { WorkerType } from "@/app/aboutus/WorkerCard";
 import { Label } from "@/components/ui/label";
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
