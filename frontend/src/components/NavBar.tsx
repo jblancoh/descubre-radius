@@ -10,15 +10,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { usePathname } from "next/navigation";
 
-const NavBarBlog: FC = () => {
+const NavBar: FC = () => {
+  const pathname = usePathname();
+  
+  const logo = pathname === "/blog" ? "/img/logo-blog.png" : "/img/radius-logo.svg";
 
   return (
     <nav className="shadow-lg">
       <div className="container flex justify-between">
         <div className="flex space-x-4 my-2">
          <img
-          src={"/img/logo-blog.png"}
+          src={logo}
           alt="logo"
           className="w-44 object-contain"
         />
@@ -75,4 +79,4 @@ const NavBarBlog: FC = () => {
   )
 }
 
-export default NavBarBlog;
+export default NavBar;
