@@ -15,7 +15,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const getWorker = async (): Promise<{ data: any, error: any }> => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/workers?filters[status][$eq]=true&populate=avatar&pagination[pageSize]=3`, {
+      `${process.env.NEXT_PUBLIC_API_URL}/api/workers?filters[status][$eq]=true&populate=avatar`, {
       headers: {
         "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
       },
@@ -61,7 +61,7 @@ const TeamRadiusCarousel: FC = () => {
             delay: 3000,
           })
         ]}
-        className="w-full"
+        className="container mx-auto mt-8"
       >
         <CarouselContent>
         {data && data.map((worker: WorkerType, index) => {
