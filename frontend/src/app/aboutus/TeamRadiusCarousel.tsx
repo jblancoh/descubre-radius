@@ -61,11 +61,11 @@ const TeamRadiusCarousel: FC = () => {
             delay: 3000,
           })
         ]}
-        className="container mx-auto mt-8"
+        className="container mx-auto mt-5"
       >
         <CarouselContent>
         {data && data.map((worker: WorkerType, index) => {
-          return <CarouselItem key={index} className="basis-1/4 mt-8 mr-">
+          return <CarouselItem key={index} className="basis-1/4 mr-">
             <WorkerCard worker={worker} key={index} />
           </CarouselItem>
           })
