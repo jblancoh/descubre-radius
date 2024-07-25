@@ -912,6 +912,41 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiWorkerWorker extends Schema.CollectionType {
+  collectionName: 'workers';
+  info: {
+    singularName: 'worker';
+    pluralName: 'workers';
+    displayName: 'Worker';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    lastName: Attribute.String;
+    motherLastName: Attribute.String;
+    position: Attribute.String;
+    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::worker.worker',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::worker.worker',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWriterWriter extends Schema.CollectionType {
   collectionName: 'writers';
   info: {
@@ -971,6 +1006,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::post.post': ApiPostPost;
+      'api::worker.worker': ApiWorkerWorker;
       'api::writer.writer': ApiWriterWriter;
     }
   }
