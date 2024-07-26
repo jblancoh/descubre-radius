@@ -9,7 +9,7 @@ type WorkerPageProps = {
 
 const fetchWorker = async (slug: string): Promise<{ data: any, error: any }> => {
   try {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/worker?filters[slug][$eq]=${slug}&populate=profilePicture`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/workers?filters[slug][$eq]=${slug}&populate=profilePicture`;
     
     const response = await fetch(
       url, {
@@ -43,7 +43,7 @@ const WorkerPage: React.FC<WorkerPageProps> = async ({params}) => {
       </div>
       <div className="grid grid-cols-4 gap-4">
         <div className="col-span-4 md:col-span-3">
-          <div dangerouslySetInnerHTML={{ __html: workerContent }} />
+          {workerContent && (<div dangerouslySetInnerHTML={{ __html: workerContent }} />)}
         </div>
       </div>
     </div>
