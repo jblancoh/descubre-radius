@@ -939,6 +939,7 @@ export interface ApiWorkerWorker extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
+    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
