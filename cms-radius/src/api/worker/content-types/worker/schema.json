@@ -4,7 +4,8 @@
   "info": {
     "singularName": "worker",
     "pluralName": "workers",
-    "displayName": "Worker"
+    "displayName": "Worker",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,17 +25,30 @@
       "type": "string"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "status": {
       "type": "boolean"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
