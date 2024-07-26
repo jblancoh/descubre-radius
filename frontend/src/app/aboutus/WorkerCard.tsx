@@ -22,7 +22,7 @@ export type WorkerType = {
 const WorkerCard = ({ worker }: { worker: WorkerType }) => {
   const workerName = `${worker.attributes.name || ''} ${worker.attributes.lastName || ''} ${worker.attributes.motherLastName || ''}`;
   return (
-    <Link href={`/aboutus/${worker.attributes.slug}`} className="cursor-pointer">
+    <Link href={`/aboutus/${worker.attributes.slug}`} className="cursor-pointer" target="_blank" >
       <div className="flex flex-col justify-center items-center">
         <img src={
           worker.attributes?.avatar?.data?.attributes?.url
@@ -31,10 +31,10 @@ const WorkerCard = ({ worker }: { worker: WorkerType }) => {
         } alt={workerName}
           className="md:w-60 h-60 object-cover m-4"
         />
-        <Label className="text-xl leading-8 font-bold">
+        <Label className="text-xl leading-8 font-bold cursor-pointer">
           {workerName}
         </Label>
-        <Label className="text-sm font-normal">
+        <Label className="text-sm font-normal cursor-pointer">
           {
             `${worker.attributes.position || ''} `
           }
