@@ -918,6 +918,7 @@ export interface ApiWorkerWorker extends Schema.CollectionType {
     singularName: 'worker';
     pluralName: 'workers';
     displayName: 'Worker';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -929,6 +930,16 @@ export interface ApiWorkerWorker extends Schema.CollectionType {
     position: Attribute.String;
     avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     status: Attribute.Boolean;
+    slug: Attribute.UID<'api::worker.worker', 'name'>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
