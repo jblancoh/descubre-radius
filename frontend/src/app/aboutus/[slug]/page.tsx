@@ -35,15 +35,15 @@ const WorkerPage: React.FC<WorkerPageProps> = async ({params}) => {
   
   return (
     <div className="container mx-auto my-12 bg-white">
-      <div className="text-center flex flex-col space-y-4 my-4 justify-around items-center">
+      <div className="text-center flex flex-col space-y-4 my-10 justify-around items-center">
         <img
-          className="z-10 w-96"
+          className="z-10 w-80"
           src={workerProfilePicture?.data?.attributes?.url}
           alt={workerLongName}
         />
         {/* Next component is for the blue line behinde the worker photo */}
         <div className="bg-slate-800 h-28 w-7/12 absolute bottom-64 z-0 bg-primary" />
-        <Label className="text-3xl leading-8 font-bold text-white bg-red-500 py-8  w-2/3 absolute top-96 z-20">
+        <Label className="text-3xl leading-8 font-bold text-white bg-red-500 py-8  w-4/6 absolute top-96 z-20">
           {workerLongName}
         </Label>
       </div>
