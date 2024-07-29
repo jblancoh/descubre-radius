@@ -162,9 +162,8 @@ const LastPosts:FC = () => {
             if (!page) return;
             const isActive = currentPage === page;
             return (
-              <PaginationItem>
+              <PaginationItem key={page}>
                 <PaginationLink 
-                  key={page}
                   onClick={() => setCurrentPage(page)}
                   isActive={isActive}
                   aria-disabled={isActive}
