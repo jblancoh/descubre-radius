@@ -29,20 +29,26 @@ const WorkerPage: React.FC<WorkerPageProps> = async ({params}) => {
  const { slug } = params;
 
   const worker = await fetchWorker(slug);
-  const workerFullName = `${worker.data[0]?.attributes.name} ${worker.data[0]?.attributes.lastName} ${worker.data[0]?.attributes.motherLastName}`;
+  const workerLongName = `${worker.data[0]?.attributes.name} ${worker.data[0]?.attributes.lastName}`;
   const workerProfilePicture = worker.data[0]?.attributes.profilePicture;
   const workerContent = worker.data[0]?.attributes.content;
   
   return (
-    <div className="container mx-auto my-8 bg-white">
-      <div className="text-center flex flex-col space-y-4 my-4">
-        <Label className="text-3xl leading-8 font-bold">
-          {workerFullName}
+    <div className="container mx-auto my-12 bg-white">
+      <div className="text-center flex flex-col space-y-4 my-4 justify-around items-center">
+        <img
+          className="z-10 w-96"
+          src={workerProfilePicture?.data?.attributes?.url}
+          alt={workerLongName}
+        />
+        {/* Next component is for the blue line behinde the worker photo */}
+        <div className="bg-slate-800 h-28 w-7/12 absolute bottom-64 z-0 bg-primary" />
+        <Label className="text-3xl leading-8 font-bold text-white bg-red-500 py-8  w-2/3 absolute top-96 z-20">
+          {workerLongName}
         </Label>
-        <img src={workerProfilePicture?.data?.attributes?.url} alt={workerFullName} />
       </div>
-      <div className="grid grid-cols-4 gap-4">
-        <div className="col-span-4 md:col-span-3">
+      <div className="flex flex-col justify-center items-center">
+        <div className="my-14 mx-24">
           {workerContent && (<div dangerouslySetInnerHTML={{ __html: workerContent }} />)}
         </div>
       </div>
