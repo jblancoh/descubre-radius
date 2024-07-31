@@ -10,10 +10,12 @@ export const finalYStyles = "opacity-100 translate-y-0"
 export const finalXStyles = "opacity-100 translate-x-0"
 
 export const initialYStyles = "opacity-0 translate-y-10"
-export const initialXStyles = "opacity-0 translate-x-100"
+export const initialXStyles = "opacity-0 translate-x-10"
+export const initialYNegativeStyles = "opacity-0 -translate-y-10"
+export const initialXNegativeStyles = "opacity-0 -translate-x-10"
 
 
-const useTransition = (ref: any, axis: 'y' | 'x') => {
+const useTransition = (ref: any) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -38,11 +40,19 @@ const useTransition = (ref: any, axis: 'y' | 'x') => {
     };
   }, []);
 
-  const applicableStyle = `${baseTransitionClasses} ${isVisible
-    ? axis === 'y' ? finalYStyles : initialYStyles
-    : axis === 'x' ? finalXStyles : initialXStyles}`
+  
+  const applicableYStyle = `${baseTransitionClasses} ${isVisible ? finalYStyles : initialYStyles}`
+  const applicableXStyle = `${baseTransitionClasses} ${isVisible ? finalXStyles : initialXStyles}`
+  const applicableYNegativeStyle = `${baseTransitionClasses} ${isVisible ? finalYStyles : initialYNegativeStyles}`
+  const applicableXNegativeStyle = `${baseTransitionClasses} ${isVisible ? finalXStyles : initialXNegativeStyles}`
 
-  return {applicableStyle, customTransitionStyles};
+  return {
+    applicableYStyle,
+    applicableYNegativeStyle,
+    applicableXStyle,
+    applicableXNegativeStyle,
+    customTransitionStyles
+  };
 }
 
 export default useTransition;
