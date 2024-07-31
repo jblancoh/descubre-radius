@@ -1,4 +1,5 @@
 import BannerSolutions from "@/components/BannerSolutions";
+import Contact from "@/components/Contact";
 import WhyRadiusSimple from "@/components/WhyRadiusSimple";
 
 const Page = () => {
@@ -6,6 +7,7 @@ const Page = () => {
     <div>
       <BannerSolutions type="analytics" />
       <WhyRadiusSimple type="analytics" />
+      <Contact />
     </div>
   )
 }
