@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { FC } from "react"
+import { FC, useRef } from "react"
 import { useFormState } from 'react-dom'
 import Link from 'next/link'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -35,7 +35,7 @@ const Page:FC = () => {
       value: state.phone,
       countries: defaultCountries,
     });
-
+  const formRef = useRef<HTMLFormElement>(null)
   return (
     <div className="container mx-auto p-8">
       <div className="mx-auto p-8 space-y-12">
@@ -68,15 +68,15 @@ const Page:FC = () => {
             <p>Llámanos: +52 55 2911 2989</p>
           </div>
           <div>
-            <form className="space-y-4" action={async (formData: FormData) => {
+            <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
                formAction(formData)
-                if (!state.errors && state.errors !== undefined) {
-                  toast.success('Mensaje enviado correctamente')
-                }
+                if (state.errors) return toast.error('Error al enviar mensaje')
+                toast.success('Mensaje enviado correctamente')
+                formRef.current?.reset()
             }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col">
-                <Input placeholder="Nombre" name="name" />
+                  <Input placeholder="Nombre" name="name" />
                   <p aria-live="polite" className="text-red-500">
                     {state?.errors?.name}
                   </p>
@@ -86,7 +86,7 @@ const Page:FC = () => {
                   <p aria-live="polite" className="text-red-500">
                     {state?.errors?.company}
                   </p>
-              </div>
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col">
@@ -159,7 +159,7 @@ const Page:FC = () => {
                   name="privacyPolicy"
                 />
                 <label htmlFor="privacy-policy" className="ml-2 text-sm font-normal">
-                  Acepto la <Button asChild variant={"link"} ><Link href="/privacy-policy" className="pl-0">política de privacidad</Link></Button>
+                  Acepto la <Button asChild variant={"link"} ><Link href="/aviso-de-privacidad" className="pl-0" target="_blank">política de privacidad</Link></Button>
                 </label>
               </div>
               <p aria-live="polite" className="text-red-500">
