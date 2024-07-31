@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface Brand {
     src: string;
     alt: string;
@@ -42,7 +44,9 @@ const WhyRadius = () => {
                         entorno digital.
                     </p>
                     <button className="mt-12 py-2 px-4 rounded-full border border-white w-full">
-                      Conoce más de Radius
+                      <Link href="/aboutus">
+                        Conoce más de Radius
+                      </Link>
                     </button>
                   </div>
                   <div className="flex flex-col justify-center max-w-lg mx-auto">

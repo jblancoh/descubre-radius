@@ -10,6 +10,7 @@ import Link from "next/link";
 
 
 import BannerExperts from "@/components/BannerExperts";
+import Contact from "@/components/Contact";
 
 
 export default function Home() {
@@ -19,9 +20,10 @@ export default function Home() {
       <BannerExperts/>
       <BannerProvideSolutions/>
       <SectorExperience /> 
+      <WhyRadius />
       <DiscoverMaturityLevel />
       <BannerBlogArticles /> 
-      <WhyRadius />
+      <Contact />
     </main>
   );
 }
