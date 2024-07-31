@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React from 'react';
 
 interface CardProps {
@@ -63,9 +64,9 @@ const BannerBlogArticles: React.FC = () => {
       <h1 className="text-3xl font-bold text-center mb-3 text-red-500">Lo último de Radius</h1>
       <h2 className='text-lg text-center mb-6'>Noticias, eventos y artículos de interés.</h2>
       <div className="text-center mb-8">
-        <a href="#" className="inline-block bg-white border-2 border-gray-500 text-gray-800 px-6 py-1 rounded-full hover:bg-gray-500 hover:text-white transition-colors duration-300">
+        <Link href="/blog" className="inline-block bg-white border-2 border-gray-500 text-gray-800 px-6 py-1 rounded-full hover:bg-gray-500 hover:text-white transition-colors duration-300">
           Ir al blog
-        </a>
+        </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {cardsData.map((card, index) => (

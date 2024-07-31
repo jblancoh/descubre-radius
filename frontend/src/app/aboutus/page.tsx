@@ -3,6 +3,7 @@ import RadiusToday from "@/components/RadiusToday";
 import Celebrating from "@/components/Celebrating";
 import TeamRadiusCarousel from "./TeamRadiusCarousel";
 import WeAre from "./WeAre";
+import Contact from "@/components/Contact";
 
 const Page = () => {
   return (
@@ -12,6 +13,7 @@ const Page = () => {
       <Celebrating />
       <WeAre />
       <TeamRadiusCarousel />
+      <Contact />
     </div>
   )
 }
