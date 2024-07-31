@@ -7,7 +7,7 @@ const Footer: FC = () => {
     <footer className=" bg-primary">
       <div className="container text-white grid grid-cols-3 place-items-center">
         <div className="col-span-3 md:col-span-1 p-4">
-          <img src="/img/radius-logo-white.svg" alt="Logo" className="w-28" />
+          <img src="/img/radius-logo-white.svg" alt="Logo" className="w-28 lg:w-40" />
           <span className="text-sm">
             México © 2024
           </span>

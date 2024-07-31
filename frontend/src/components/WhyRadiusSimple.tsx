@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 
@@ -18,7 +19,9 @@ interface WhyRadiusSimpleProps {
           <h2 className="text-xl">Somos una consultora de <strong>tecnología boutique</strong></h2>
           <p className="mt-2">Ofrecemos atención y seguimiento personalizado y transparencia en procesos</p>
           <button className="mt-4 px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-tech-600">
-            Conoce más de Radius
+            <Link href="/aboutus">
+              Conoce más de Radius
+            </Link>
           </button>
         </div>
       </div>
