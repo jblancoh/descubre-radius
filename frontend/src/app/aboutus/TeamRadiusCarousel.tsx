@@ -1,5 +1,5 @@
 'use client';
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +11,7 @@ import Autoplay from "embla-carousel-autoplay"
 import WorkerCard, { WorkerType } from "@/app/aboutus/WorkerCard";
 import { Label } from "@/components/ui/label";
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import useTransition from "@/hooks/useTransition";
 
 const getWorker = async (): Promise<{ data: any, error: any }> => {
   try {
@@ -32,6 +33,9 @@ const TeamRadiusCarousel: FC = () => {
   const [data, setData] = useState<WorkerType[]>([]);
   const [error, setError] = useState()
 
+  const bannerRef = useRef(null);
+  const { applicableYStyle, customTransitionStyles } = useTransition(bannerRef);
+
   useEffect(() => {
     const getData = async () => {
       const {data, error} = await getWorker();
@@ -43,12 +47,13 @@ const TeamRadiusCarousel: FC = () => {
     
   return (
     <div
+      ref={bannerRef}
       className="flex flex-col justify-center items-center bg-red-500 pt-12 pb-20 text-white px-32"
     >
-      <Label className="text-2xl leading-8 font-bold">
+      <Label className={`text-2xl leading-8 font-bold ${applicableYStyle}`} style={customTransitionStyles}>
         Equipo Radius
       </Label>
-      <Label className="text-sm font-normal">
+      <Label className={`text-sm font-normal ${applicableYStyle}`} style={customTransitionStyles}>
       Somos un gran equipo interdisciplinario, creativos y apasionados por la tecnología.
       </Label>
       <Carousel
