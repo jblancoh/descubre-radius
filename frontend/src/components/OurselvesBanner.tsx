@@ -1,8 +1,12 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import useTransition from '@/hooks/useTransition';
 
 const Ourselves: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('Analytics');
+
+  const bannerRef = useRef(null);
+  const { appearingStyle, customTransitionStyles } = useTransition(bannerRef);
 
   const sections: { [key: string]: string[] } = {
     Analytics: [
@@ -45,12 +49,12 @@ const Ourselves: React.FC = () => {
     `font-bold text-2xl ${section === activeSection ? colorClasses[section] : 'text-gray-500'}`;
 
   return (
-    <div className="w-full bg-white flex flex-col lg:flex-row h-auto lg:h-screen relative">
+    <div ref={bannerRef} className="w-full bg-white flex flex-col lg:flex-row h-auto lg:h-screen relative">
       <img
         src="/img/radius-red-circle.svg"
         alt="Radius red circle"
-        className="absolute z-50 w-18 hidden lg:block"
-        style={{ left: '55%', top: '73%', transform: 'translate(-50%, -50%)' }}
+        className={`absolute z-50 w-18 hidden lg:block ${appearingStyle}`}
+        style={{ left: '55%', top: '73%', transform: 'translate(-50%, -50%)', ...customTransitionStyles }}
       />
       <div className="w-full lg:w-[55%] flex items-center justify-center pl-4 lg:pl-28 lg:pr-10 relative">
         <div>
@@ -87,7 +91,8 @@ const Ourselves: React.FC = () => {
         <img
           src="/img/bg/Nosotros-header.jpg"
           alt="People in a meeting"
-          className="w-full h-64 lg:h-full object-cover"
+          className={`w-full h-64 lg:h-full object-cover ${appearingStyle}`}
+          style={customTransitionStyles}
         />
       </div>
     </div>
