@@ -10,7 +10,7 @@ const WeAre : FC = () => {
 
   return (
     <div className="w-full flex bg-primary text-white justify-center text-center" >
-      <div ref={bannerRef} className="container flex flex-row justify-evenly">
+      <div ref={bannerRef} className="container lg:grid-cols-3 grid gap-4 pt-5">
         <div
           className={`flex flex-col justify-center items-center mx-5 ${applicableYStyle}`}
           style={customTransitionStyles} >
