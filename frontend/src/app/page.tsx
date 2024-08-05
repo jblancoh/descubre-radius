@@ -3,12 +3,7 @@ import BannerProvideSolutions from "@/components/BannerProvideSolutions";
 import SectorExperience from "@/components/SectorExperience";
 import BannerBlogArticles from "@/components/BannerBlogArticles";
 import WhyRadius from "@/components/WhyRadius";
-
-import { Button } from "@/components/ui/button";
 import DiscoverMaturityLevel from "@/components/DiscoverMaturityLevel";
-import Link from "next/link";
-
-
 import BannerExperts from "@/components/BannerExperts";
 import Contact from "@/components/Contact";
 
