@@ -1,4 +1,5 @@
 import OurselvesBanner from "@/components/OurselvesBanner";
+import OurHistory from "./OurHistory";
 import RadiusToday from "@/components/RadiusToday";
 import Celebrating from "@/components/Celebrating";
 import TeamRadiusCarousel from "./TeamRadiusCarousel";
@@ -10,6 +11,7 @@ const Page = () => {
   return (
     <div>
       <OurselvesBanner />
+      <OurHistory />
       <RadiusToday />
       <Celebrating />
       <OurValues />
