@@ -13,9 +13,9 @@ const Page = () => {
       <OurselvesBanner />
       <RadiusToday />
       <Celebrating />
- <BannerBrands />
       <OurValues />
       <WeAre />
+      <BannerBrands />
       <TeamRadiusCarousel />
       <Contact />
     </div>
