@@ -39,10 +39,12 @@ const timeLine = [
 const OurHistory: FC = () => {
   const bannerRef = useRef(null);
   const {applicableYStyle, customTransitionStyles} = useTransition(bannerRef);
+
   return (
-    <div className="w-full flex flex-col justify-center text-white bg-[#211039] py-20 lg:px-20">
+    <div ref={bannerRef} className="w-full flex flex-col justify-center text-white bg-[#211039] py-20 lg:px-20">
       <Label
-        className={`text-2xl leading-8 font-bold w-100 text-center`}
+        className={`text-2xl leading-8 font-bold w-100 text-center ${applicableYStyle}`}
+        style={customTransitionStyles}
       >
         Nuestra Historia
       </Label>
@@ -50,8 +52,14 @@ const OurHistory: FC = () => {
       <div className="container flex flex-col items-center my-10 lg:flex-row lg:items-start lg:-mt-6 md:px-20 lg:-ml-10">
         {timeLine.map((item, index) => {
           const { year, title, content } = item
+          const extraMilliseconds = 0.5 * index
+          const customListTransitionStyles = { transition: `opacity ${1.5 + extraMilliseconds}s, transform ${1.5 + extraMilliseconds}s` }
           return (
-          <div key={index} className="flex flex-1 w-full md:w-2/3 lg:flex-col lg:justify-start lg:items-center text-left py-4">
+          <div
+            key={index}
+            className={`flex flex-1 w-full md:w-2/3 lg:flex-col lg:justify-start lg:items-center text-left py-4 ${applicableYStyle}`}
+            style={customListTransitionStyles}
+          >
             <span className="w-4 h-4 rounded-full mx-5 px-2 bg-white" />
             <p className="text-2xl font-black mr-5">{year}</p>
             <div className="text-white/[.7] text-sm ml-5">
