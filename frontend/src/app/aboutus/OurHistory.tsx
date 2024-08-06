@@ -54,7 +54,7 @@ const OurHistory: FC = () => {
           <div key={index} className="flex flex-1 w-full md:w-2/3 lg:flex-col lg:justify-start lg:items-center text-left py-4">
             <span className="w-4 h-4 rounded-full mx-5 px-2 bg-white" />
             <p className="text-2xl font-black mr-5">{year}</p>
-            <div className="text-white/[.7] text-sm ">
+            <div className="text-white/[.7] text-sm ml-5">
               <p className="-ml-4">{title}</p>
               <ul className='list-disc'>
                 {content.map((itemContent, index) => (
