@@ -67,7 +67,7 @@ const BannerBlogArticles: React.FC = async () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {data.map((card: BlogPost) => (
+        {data?.map((card: BlogPost) => (
           <Card key={card?.id} {...card} />
         ))}
       </div>
