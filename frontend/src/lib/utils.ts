@@ -79,3 +79,36 @@ export const frameworks: Frameworks = {
     { src: "/img/frameworks/zap.png", alt: "ZAP" },
   ]
 }
+
+export const timeLine = [
+  {
+    year: 2013,
+    title: null,
+    content: ['Servicios de Martketing Digital'],
+  },
+  {
+    year: 2015,
+    title: 'Proyectos enfocados en:',
+    content: ['Desarrollo de Software', 'Diseño UX-UI'],
+  },
+  {
+    year: 2019,
+    title: 'Proyectos que involucran:',
+    content: ['IT Staff Augmentation', 'Desarrollo de Software'],
+  },
+  {
+    year: 2020,
+    title: 'Enfoque en:',
+    content: ['IT Staff Augmentation', 'Equipos: UX-Ui, Gestion de Proyectos, Data Anal[itica'],
+  },
+  {
+    year: 2023,
+    title: null,
+    content: [
+      'Proyectos de TI complejos',
+      'Machine Learning',
+      'Cultura Analítica',
+      'Desarrollo de Software a la medida con equipos interdisciplinarios'
+    ],
+  }
+]
