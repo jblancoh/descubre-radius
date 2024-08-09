@@ -12,8 +12,14 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Descubre Radius",
-  description: "",
+  title: {
+    default: "Radius",
+    template: "%s | Descubreradius",
+  },
+  openGraph: {
+    description: "Somos una consultora tecnológica, orgullosamente mexicana, que ha desarrollado distintas verticales de negocio para apoyar la transformación digital de la mano de nuestros clientes.",
+    images: [''],
+  },
 };
 
 export default function RootLayout({
