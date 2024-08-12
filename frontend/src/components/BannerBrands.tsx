@@ -40,7 +40,7 @@ const BannerBrands = () => {
                 <img src="/img/profile-willie.png" alt="Willie Guevara" className="w-24 h-24 rounded-full absolute left-1/2 sm:left-0 top-14 sm:top-1/2 transform -translate-x-1/2 sm:-translate-x-1/2 -translate-y-1/2 sm:-translate-y-1/2" />
                 <div className="flex flex-col items-center mt-16 sm:mt-0 sm:ml-16">
                     <p className="text-base sm:text-lg italic mb-4 text-center pt-8 sm:pt-0">
-                        "La velocidad y agilidad se consiguen, cuando las personas y los equipos de trabajo confían verdaderamente el uno con el otro. Es por eso que nuestra más alta prioridad y responsabilidad como firma consultora es construir CONFIABILIDAD".
+                        {"La velocidad y agilidad se consiguen, cuando las personas y los equipos de trabajo confían verdaderamente el uno con el otro. Es por eso que nuestra más alta prioridad y responsabilidad como firma consultora es construir CONFIABILIDAD."}
                     </p>
                     <img src="/img/firma-willie.png" alt="Willie Guevara Signature" className="h-18 mb-2" />
                     <p className="">CEO y Fundador</p>
