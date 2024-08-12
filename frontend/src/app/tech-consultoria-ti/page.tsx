@@ -4,14 +4,14 @@ import BusinessIntelligence from "@/components/BusinessIntelligence";
 import TechConsultingCards from "@/components/TechConsultingCards";
 
 const TechConsultingIT = () => {
-return (
+    return (
     <>
-    <RadiusTechIT/>
-    <SoftwareMeasure/>
-    <BusinessIntelligence/>
-    <TechConsultingCards/>
+        <RadiusTechIT/>
+        <SoftwareMeasure/>
+        <BusinessIntelligence/>
+        <TechConsultingCards/>
     </>
-      );
-    };
+    );
+};
 
 export default TechConsultingIT;
