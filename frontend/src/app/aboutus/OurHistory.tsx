@@ -34,7 +34,7 @@ const OurHistory: FC = () => {
               <p className="-ml-4">{title}</p>
               <ul className='list-disc'>
                 {content.map((itemContent, index) => (
-                  <li className="">{itemContent}</li>
+                  <li key={index}>{itemContent}</li>
                 ))}
               </ul>
             </div>
