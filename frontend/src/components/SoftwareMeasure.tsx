@@ -1,5 +1,5 @@
 const SoftwareMeasure = () => {
-return (
+    return (
     <div className="bg-[#37021d] text-white pt-52 sm:pt-40 lg:pt-40 pb-14 ">
       <div className="max-w-7xl mx-auto text-center">
         <div className="relative">
