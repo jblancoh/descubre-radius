@@ -1,12 +1,14 @@
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import PopularArticles from "../PopularArticles";
+import { Metadata } from "next";
 
 type BlogPostPageProps = {
   params: {
     slug: string;
   };
 };
+
 
 const fetchBlogPost = async (slug: string): Promise<{ data: any, error: any }> => {
   try {
@@ -23,6 +25,61 @@ const fetchBlogPost = async (slug: string): Promise<{ data: any, error: any }> =
     return { data: result?.data, error: null };
   } catch (error) {
     return { data: null, error };
+  }
+}
+
+export async function generateMetadata(
+  {params}: BlogPostPageProps
+): Promise<Metadata> {
+  const { slug } = params;
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/api/posts?filters[slug][$eq]=${slug}&populate[0]=cover`;
+
+  const response = await fetch(
+    url, {
+    headers: {
+      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+    },
+    cache: "no-store"
+  });
+  const result = await response.json();
+
+  return {
+    title: result?.data[0]?.attributes?.title,
+    openGraph: {
+      title: result?.data[0]?.attributes?.title,
+      description: result?.data[0]?.attributes?.description,
+      images: [
+        {
+          url: result?.data[0]?.attributes?.cover?.data?.attributes?.url,
+        },
+      ],
+    },
+  }
+}
+
+export async function generateStaticParams() {
+  try {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/posts?fields[3]=slug`;
+
+    const response = await fetch(
+      url, {
+      headers: {
+        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+      },
+    });
+    const result = await response.json();
+
+    const paths = result?.data.map((post: any) => {
+      return {
+        params: {
+          slug: post.attributes.slug,
+        },
+      };
+    });
+
+    return paths || [];
+  } catch (error) {
+    return [];
   }
 }
 
