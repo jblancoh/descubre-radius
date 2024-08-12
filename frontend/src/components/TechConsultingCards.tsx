@@ -81,5 +81,4 @@ const TechConsultingCards: React.FC = () => {
           </div>
         );
       };
-      
-      export default TechConsultingCards;
+export default TechConsultingCards;
