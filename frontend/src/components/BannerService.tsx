@@ -60,7 +60,7 @@ const BannerService: FC<BannerServiceProps> = ({ type }) => {
         <img 
           src={type === 'tech' ? "/img/icon-radius-tech.svg" : "/img/radius-analytics.svg" } 
           alt="Radius Icon"
-          className={`-mx-10 mt-44 z-10 ${applicableJumpInAnimation}`}
+          className={`-mx-10 mt-44 z-10 w-20 ${applicableJumpInAnimation}`}
           style={{'transition': 'opacity 0.5s, transform 0.5s'}}
         />
         <img
