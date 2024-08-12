@@ -20,7 +20,7 @@ const RadiusTechIT = () => {
           <h1 className="relative text-4xl font-bold mb-6 z-10">Radius Tech</h1>
         </div>
         <h2 className="text-xl font-semibold mb-5">Consultoría IT, Casa de Desarrollo y Fábrica de Software</h2>
-        <p className="mb-6 text-xl"> 
+        <p className="mb-4 md:mb-6 text-xl text-balance"> 
           Los negocios, empresas y organizaciones tienen necesidades y requerimientos específicos.
           Para crecer y ser más eficientes necesitan contar sistemas y tecnologías que se adapten a sus procesos,
           y de esta forma, puedan sistematizar sus operaciones. Frecuentemente no hay ningún producto en el mercado
@@ -42,7 +42,7 @@ const RadiusTechIT = () => {
             <li>Interpretamos y traducimos de forma eficaz las necesidades de las áreas usuarias de nuestros clientes para el aterrizaje y despliegue de aplicaciones que conformen una solución satisfactoria.</li>
           </ul>
         </div>
-        <p className="pt-6 m-16 text-xl">
+        <p className="pt-6 mb-16 md:m-16 text-xl text-balance">
           Brindamos servicios de consultoría en inteligencia de negocios, gestión de proyectos y fabricación y desarrollo de software a la medida para todo tipo de profesionales, negocios, empresas y organizaciones.
           <br />Contamos con un equipo humano especializado y a la vanguardia, así como soluciones de tecnología en la nube para satisfacer los requisitos de nuestros clientes.
           <br />Hemos colaborado en diversos desarrollos, desde pequeños hasta proyectos de gran escala, ya sea partiendo desde cero, trabajando con aplicaciones existentes que necesitan evolucionar o conectándose con sistemas de terceros.
