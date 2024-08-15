@@ -40,7 +40,7 @@ const CardSolutions: React.FC<CardProps> = ({ title, imgSrc, description, type }
   };
   
   return (
-      <Card className="w-[375px] p-1 flex flex-col h-full">
+    <Card className="w-[375px] p-1 flex flex-col h-full">
         <CardHeader className="flex flex-col items-center gap-2">
           <img 
             src={imgSrc}

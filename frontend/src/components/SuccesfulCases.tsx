@@ -9,7 +9,7 @@ const SuccesfulCases: FC = () => {
     <div className=" bg-tech-400 flex flex-col items-center space-y-4">
       <h2 className="font-bold text-3xl text-white mt-4">Casos de éxito</h2>
       <div className="grid grid-cols-4 gap-4 container pb-8">
-        <div className="col-span-4 md:col-span-1">
+        <div className="col-span-4 md:col-span-2 lg:col-span-1">
           <Card className="rounded-none border-0 hover:-translate-y-1 duration-300 md:min-h-[500px] ">
             <CardHeader className="p-0">
               <img src="/img/pld-imagen.jpg" alt="pld" className="h-[200px] md:h-[145px] object-cover"/>
@@ -24,7 +24,7 @@ const SuccesfulCases: FC = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="col-span-4 md:col-span-1">
+        <div className="col-span-4 md:col-span-2 lg:col-span-1">
           <Card className="rounded-none border-0 hover:-translate-y-1 duration-300 md:min-h-[500px] ">
             <CardHeader className="p-0">
               <img src="/img/omnicanal-imagen.jpg" alt="omnicanal" className="h-[200px] md:h-[145px] object-cover" />
@@ -41,7 +41,7 @@ const SuccesfulCases: FC = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="col-span-4 md:col-span-1">
+        <div className="col-span-4 md:col-span-2 lg:col-span-1">
           <Card className="rounded-none border-0 hover:-translate-y-1 duration-300 md:min-h-[500px]">
             <CardHeader className="p-0">
               <img src="/img/DPA-retail-imagen.jpg" alt="dpa-retail" className="h-[200px] md:h-[145px] object-cover" />
@@ -55,7 +55,7 @@ const SuccesfulCases: FC = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="col-span-4 md:col-span-1">
+        <div className="col-span-4 md:col-span-2 lg:col-span-1">
           <Card className="rounded-none border-0 hover:-translate-y-1 duration-300 md:min-h-[500px]">
             <CardHeader className="p-0">
               <img src="/img/PMR-imagen.jpg" alt="pmr" className="h-[200px] md:h-[145px] object-cover" />

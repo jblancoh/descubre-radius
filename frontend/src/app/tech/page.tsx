@@ -4,6 +4,7 @@ import SuccesfulCases from "@/components/SuccesfulCases";
 import WhyRadiusSimple from "@/components/WhyRadiusSimple";
 import BannerFrameworks from "@/components/BannerFrameworks";
 import BannerService from "@/components/BannerService";
+import ConsultingServices from "./ConsultingServices";
 
 
 const Page = () => {
@@ -11,6 +12,7 @@ const Page = () => {
     <div>
       <BannerService type="tech"/>
       <BannerSolutions type="tech"/>
+      <ConsultingServices />
       <SuccesfulCases />
       <WhyRadiusSimple type="tech" />
       <BannerFrameworks type="tech" />
