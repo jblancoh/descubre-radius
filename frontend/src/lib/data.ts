@@ -135,6 +135,42 @@ const Solutions = {
   }
 }
 
+const ConsultingServicesData = [
+  {
+    title: "ARQUITECTURA DE SOLUCIONES Y APLICACIONES",
+    description: "Establecer la estructura para el buen uso de los datos."
+  },
+  {
+    title: "AUTOMATIZACIÓN DE PROCESOS",
+    description: "Generación de soluciones y aplicaciones sin intervención humana."
+  },
+  {
+    title: "DIGITALIZACIÓN, SISTEMATIZACIÓN Y MANEJO DE DATOS",
+    description: "Proceso de automatización del dato en sus respectivas fases."
+  },
+  {
+    title: "PLATAFORMAS DE GESTIÓN A LA MÉDIDA (ERP, CRM, ETC)",
+    description: "Manejo adhoc de los ciclos del dato en los diferentes gestores."
+  },
+  {
+    title: "CONSULTORÍA INTEGRAL EN TI",
+    description: "Apoyo y orientación para obtener el mejor valor end to end del dato con las tecnologías."
+  },
+  {
+    title: "CONSULTORÍA EN TRANSFORMACIÓN DIGITIAL",
+    description: "Creamos la capacidad de integrar tecnología digital de valor para la mejora de los procesos, las aplicaciones y soluciones del dato."
+  },
+  {
+    title: "GESTIÓN DE PROYECTOS Y/O CÉLULAS ÁGILES",
+    description: "Apoyamos a el negocio para agilizar sus Soluciones y Aplicaciones con el uso de procesos para la obtención de valor a corto plazo."
+  },
+  {
+    title: "NEARSHORING DE EQUIPO ESPECIALIZADO",
+    description: "Empoderamos a las empresas para que obtengan el mayor valor de su tecnología a través de talentos."
+  },
+]
+
 export {
-  Solutions
+  Solutions,
+  ConsultingServicesData,
 }

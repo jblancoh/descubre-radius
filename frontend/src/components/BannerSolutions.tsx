@@ -23,7 +23,7 @@ const BannerSolutions: React.FC<BannerSolutionsProps> = ({ type }) => {
       <div className={cn("absolute inset-0 bg-opacity-80", colorClasses[type])}></div>
       <p className="relative text-white flex justify-center font-bold text-3xl pt-11 my-12 ">Soluciones</p>
       <div className="relative flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-10 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-x-20 lg:gap-y-10 place-items-center">
           {
             solutionsData.cards.map((card, index) => (
               <CardSolutions
