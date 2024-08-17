@@ -6,7 +6,7 @@ const Solutions = {
       "title": "Data Solutions",
       "imgSrc": "/img/data-solutions-green.png",
       "description": [
-         {
+        {
           "title": "Data Architecture",
           "content": "Es la práctica de recopilar, organizar y acceder a los datos garantizando su accesibilidad, seguridad y privacidad para dar soporte a la productividad, eficiencia y toma de decisiones."
         },
@@ -64,7 +64,7 @@ const Solutions = {
         }
       ]
     }
-  ]
+    ]
   },
   "tech": {
     "bgImg": "/img/bg/bg-soluciones-blue.jpg",
@@ -129,9 +129,9 @@ const Solutions = {
           "content": ""
         }
       ]
-      
+
     }
-  ]
+    ]
   }
 }
 
@@ -170,7 +170,56 @@ const ConsultingServicesData = [
   },
 ]
 
+
+const WeSolveNeedsData = [
+  {
+    title: "Aplicativos Web y Mobile",
+    description: "Somos el aliado perfecto para ayudarte a maximizar el potencial digital de tu compañía. En conjunto con tu equipo definimos estrategias e implementamos soluciones punta a punta integradas por los mejores expertos y las mejores tecnologías para ayudarte en tu proceso de transformación digital y ser cada vez más competitivo en un mundo en constante cambio.",
+  },
+  {
+    title: "Desarrollo de Software",
+    description: "Conceptualizamos, analizamos, diseñamos, construimos y garantizamos la calidad de las aplicaciones de software en tu compañía con el objetivo de contribuir a la eficiencia de los procesos estratégicos, operativos y de soporte.",
+    list: [
+      "Desarrollo de Software",
+      "Software Quality Assurance",
+    ],
+  },
+  {
+    title: "Servicios Administrados de Aplicaciones",
+    description: `
+      Somos el aliado perfecto para ayudarte a maximizar el potencial digital en tu compañía.
+
+      En conjunto con tu equipo, definimos de punta a punta las aplicaciones con tus mejores tecnologías, con los mejores estándares internacionales.
+    `,
+  },
+  {
+    title: "Integraciones",
+    description: "Modelamos servicios de integración que permiten a los clientes disponer de una capacidad altamente entrenada en los distintas plataformas y las capas de integración.",
+  },
+  {
+    title: "Arquitectura",
+    description: "Evaluamos, analizamos, y modernizamos los modelos de arquitectura que permiten a las organizaciones definir su roadmap de sistemas asistiéndolos, definiéndolos y acompañándolas en formato proyecto y servicios; desde la arquitectura empresarial, la innovación y la arquitectura de datos.",
+  },
+  {
+    title: "Gestión de API's",
+    description: "Implementamos, evaluamos, creamos arquitecturas que evolucionan hacia productos de API Management, transformando hacia un modelo que escala en nuevos negocios; así como la autogestión, performance y escalabilidad automática.",
+  },
+  {
+    title: "Intranet / Extranet",
+    description: "Buscamos, con las mejores tecnologías y prácticas, la actualización, gestión y manejo de la información interna de la compañía, así como la externa al público; tomando en cuenta estándares internacionales y de seguridad del dato.",
+  },
+  {
+    title: "Plataformas de Gestión a la medida",
+    description: "Te apoyamos para la omnicalanidad de tus plataformas, aplicaciones y soluciones con base en tu tecnología o vanguardia tecnológica con marco TOGAF, BI, e IA.",
+  },
+  {
+    title: "Módulos adicionales para completar tu ERP",
+    description: "Te ayudamos a reforzar tu estrategia de datos de forma integral con tu arquitectura empresarial para la optimización de los datos Gold.",
+  },
+]
+
 export {
   Solutions,
   ConsultingServicesData,
+  WeSolveNeedsData,
 }
