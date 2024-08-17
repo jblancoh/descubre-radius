@@ -6,7 +6,7 @@ const Solutions = {
       "title": "Data Solutions",
       "imgSrc": "/img/data-solutions-green.png",
       "description": [
-         {
+        {
           "title": "Data Architecture",
           "content": "Es la práctica de recopilar, organizar y acceder a los datos garantizando su accesibilidad, seguridad y privacidad para dar soporte a la productividad, eficiencia y toma de decisiones."
         },
@@ -64,7 +64,7 @@ const Solutions = {
         }
       ]
     }
-  ]
+    ]
   },
   "tech": {
     "bgImg": "/img/bg/bg-soluciones-blue.jpg",
@@ -129,12 +129,97 @@ const Solutions = {
           "content": ""
         }
       ]
-      
+
     }
-  ]
+    ]
   }
 }
 
+const ConsultingServicesData = [
+  {
+    title: "ARQUITECTURA DE SOLUCIONES Y APLICACIONES",
+    description: "Establecer la estructura para el buen uso de los datos."
+  },
+  {
+    title: "AUTOMATIZACIÓN DE PROCESOS",
+    description: "Generación de soluciones y aplicaciones sin intervención humana."
+  },
+  {
+    title: "DIGITALIZACIÓN, SISTEMATIZACIÓN Y MANEJO DE DATOS",
+    description: "Proceso de automatización del dato en sus respectivas fases."
+  },
+  {
+    title: "PLATAFORMAS DE GESTIÓN A LA MÉDIDA (ERP, CRM, ETC)",
+    description: "Manejo adhoc de los ciclos del dato en los diferentes gestores."
+  },
+  {
+    title: "CONSULTORÍA INTEGRAL EN TI",
+    description: "Apoyo y orientación para obtener el mejor valor end to end del dato con las tecnologías."
+  },
+  {
+    title: "CONSULTORÍA EN TRANSFORMACIÓN DIGITIAL",
+    description: "Creamos la capacidad de integrar tecnología digital de valor para la mejora de los procesos, las aplicaciones y soluciones del dato."
+  },
+  {
+    title: "GESTIÓN DE PROYECTOS Y/O CÉLULAS ÁGILES",
+    description: "Apoyamos a el negocio para agilizar sus Soluciones y Aplicaciones con el uso de procesos para la obtención de valor a corto plazo."
+  },
+  {
+    title: "NEARSHORING DE EQUIPO ESPECIALIZADO",
+    description: "Empoderamos a las empresas para que obtengan el mayor valor de su tecnología a través de talentos."
+  },
+]
+
+
+const WeSolveNeedsData = [
+  {
+    title: "Aplicativos Web y Mobile",
+    description: "Somos el aliado perfecto para ayudarte a maximizar el potencial digital de tu compañía. En conjunto con tu equipo definimos estrategias e implementamos soluciones punta a punta integradas por los mejores expertos y las mejores tecnologías para ayudarte en tu proceso de transformación digital y ser cada vez más competitivo en un mundo en constante cambio.",
+  },
+  {
+    title: "Desarrollo de Software",
+    description: "Conceptualizamos, analizamos, diseñamos, construimos y garantizamos la calidad de las aplicaciones de software en tu compañía con el objetivo de contribuir a la eficiencia de los procesos estratégicos, operativos y de soporte.",
+    list: [
+      "Desarrollo de Software",
+      "Software Quality Assurance",
+    ],
+  },
+  {
+    title: "Servicios Administrados de Aplicaciones",
+    description: `
+      Somos el aliado perfecto para ayudarte a maximizar el potencial digital en tu compañía.
+
+      En conjunto con tu equipo, definimos de punta a punta las aplicaciones con tus mejores tecnologías, con los mejores estándares internacionales.
+    `,
+  },
+  {
+    title: "Integraciones",
+    description: "Modelamos servicios de integración que permiten a los clientes disponer de una capacidad altamente entrenada en los distintas plataformas y las capas de integración.",
+  },
+  {
+    title: "Arquitectura",
+    description: "Evaluamos, analizamos, y modernizamos los modelos de arquitectura que permiten a las organizaciones definir su roadmap de sistemas asistiéndolos, definiéndolos y acompañándolas en formato proyecto y servicios; desde la arquitectura empresarial, la innovación y la arquitectura de datos.",
+  },
+  {
+    title: "Gestión de API's",
+    description: "Implementamos, evaluamos, creamos arquitecturas que evolucionan hacia productos de API Management, transformando hacia un modelo que escala en nuevos negocios; así como la autogestión, performance y escalabilidad automática.",
+  },
+  {
+    title: "Intranet / Extranet",
+    description: "Buscamos, con las mejores tecnologías y prácticas, la actualización, gestión y manejo de la información interna de la compañía, así como la externa al público; tomando en cuenta estándares internacionales y de seguridad del dato.",
+  },
+  {
+    title: "Plataformas de Gestión a la medida",
+    description: "Te apoyamos para la omnicalanidad de tus plataformas, aplicaciones y soluciones con base en tu tecnología o vanguardia tecnológica con marco TOGAF, BI, e IA.",
+  },
+  {
+    title: "Módulos adicionales para completar tu ERP",
+    description: "Te ayudamos a reforzar tu estrategia de datos de forma integral con tu arquitectura empresarial para la optimización de los datos Gold.",
+  },
+]
+
 export {
-  Solutions
+  Solutions,
+  ConsultingServicesData,
+  WeSolveNeedsData,
 }
