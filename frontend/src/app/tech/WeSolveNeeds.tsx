@@ -12,7 +12,7 @@ const WeSolveNeeds = () => {
       </div>
       <div className="grid grid-cols-5 container mx-auto">
         <div className="col-span-1">
-          {WeSolveNeedsData.map((service, index) => (
+          {WeSolveNeedsData?.map((service, index) => (
             <div className={`${active === index ? 'bg-white' : 'bg-tech-800'} text-balance`} key={index} onClick={() => setActive(index)}>
               <Label className={`text-xs ${active === index ? 'text-tech-800' : 'text-white'} py-4`}>{service?.title}</Label>
             </div>
@@ -21,11 +21,11 @@ const WeSolveNeeds = () => {
         </div>
         <div className="col-span-4 bg-white grid place-items-center text-balance">
           <Label className="text-base font-bold text-tech-800">
-            {WeSolveNeedsData[active]?.title}
+            {WeSolveNeedsData?.[active]?.title}
           </Label>
-          <Label className="text-base font-light text-tech-800">{WeSolveNeedsData[active]?.description}</Label>
+          <Label className="text-base font-light text-tech-800">{WeSolveNeedsData?.[active]?.description}</Label>
           {
-            (WeSolveNeedsData[active]?.list) &&
+            (WeSolveNeedsData?.[active]?.list) &&
             <ul>
               {WeSolveNeedsData[active]?.list.map((item, index) => (
                 <li key={index} className="text-base text-left font-light text-tech-800 list-disc">{item}</li>
