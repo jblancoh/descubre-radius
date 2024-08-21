@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion"
 import { Button } from '@/components/ui/button';
 import { Roles as roles } from '@/lib/data';
+import Link from 'next/link';
 
 const Roles: FC = () => {
   const bannerRef = useRef<HTMLDivElement>(null);
@@ -21,9 +22,9 @@ const Roles: FC = () => {
         <div className="hidden lg:flex flex-col justify-between items-start">
           <img src="/img/Tech-roles.jpg" alt="Tech roles" className="w-5/6 my-10" />
           <p className='text-lg'>¿Buscas un perfil en específico?</p>
-          <a href="/tech/#contact-form">
+          <Link href="#contact-form">
             <Button variant="ghost" size="lg" className='border-2 border-white rounded-3xl text-lg my-5 hover:text-tech-500'>Contáctanos</Button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex flex-1 flex-col justify-center items-start">
