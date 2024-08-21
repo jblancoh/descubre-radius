@@ -15,13 +15,15 @@ const Roles: FC = () => {
   const { applicableYStyle, customTransitionStyles } = useTransition(bannerRef);
 
   return (
-    <div ref={bannerRef} className="flex flex-col px-10 py-10 bg-tech-500 text-white lg:flex-row lg:items-start">
+    <div ref={bannerRef} className="flex flex-col px-10 py-10 bg-tech-500 text-white lg:flex-row lg:items-start 2xl:px-60">
       <div className={`flex flex-1 flex-col justify-evenly items-center p-5 lg:items-start ${applicableYStyle}`} style={customTransitionStyles}>
         <h1 className="font-bold text-3xl text-center w-full my-5 md:w-2/5 lg:text-left" >Roles que podemos cubrir</h1>
         <div className="hidden lg:flex flex-col justify-between items-start">
           <img src="/img/Tech-roles.jpg" alt="Tech roles" className="w-5/6 my-10" />
           <p className='text-lg'>¿Buscas un perfil en específico?</p>
-          <Button variant="ghost" size="lg" className='border-2 border-white rounded-3xl text-lg my-5 hover:text-tech-500' >Contáctanos</Button>
+          <a href="/tech/#contact-form">
+            <Button variant="ghost" size="lg" className='border-2 border-white rounded-3xl text-lg my-5 hover:text-tech-500'>Contáctanos</Button>
+          </a>
         </div>
       </div>
       <div className="flex flex-1 flex-col justify-center items-start">

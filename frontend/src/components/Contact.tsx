@@ -38,7 +38,7 @@ const Contact:FC = () => {
   
   const formRef = useRef<HTMLFormElement>(null)
   return (
-    <div className="bg-gray-200 w-full">
+    <div id="contact-form" className="bg-gray-200 w-full">
       <div className="container p-8">
         <div className="grid grid-cols-2 gap-8">
           <div className="space-y-6">
