@@ -135,6 +135,80 @@ const Solutions = {
   }
 }
 
+const Roles = [
+  {
+    area: 'Arquitectura IT',
+    roles: [
+      'Cloud Operations',
+      'Analista & Ingeniero de BI',
+      'DB Administrator',
+      'IT Operations',
+      'DevOps & DevSecOps',
+      'Product Implementation',
+      'Inegration Developer',
+      'Product Monitoring',
+      'BI',
+      'Product Support Engineer',
+      'KPIs y Dashboard',
+    ]
+  },
+  {
+    area: 'GRC',
+    roles: [
+      'Gobierno del Datos',
+      'Riesgo del Datos',
+      'Cumplimiento y normativa del datos'
+    ]
+  },
+  {
+    area: 'Software Development',
+    roles: [
+      'Fullstack Developer',
+      'Software Architect',
+      'Backend Developer',
+      'Solutions Architect',
+      'Front End Developer',
+    ]
+  },
+  {
+    area: 'QA Engineering',
+    roles: [
+      'QA Engineers',
+      'Test Analyst',
+      'Test Automation Engineer',
+    ]
+  },
+  {
+    area: 'Web & Mobile Technologies',
+    roles: [
+      'Web Developer',
+      'Hybrid Mobile Developer',
+      'UX / UI Designer',
+      'Full Stack Developer',
+    ]
+  },
+  {
+    area: 'Project Management',
+    roles: [
+      'IT Project Manager',
+      'Product Owner',
+      'Scrum Master',
+    ]
+  },
+  {
+    area: 'Creative Services',
+    roles: [
+      'Digital Graphic Designer',
+      'Reportes Adhoc',
+      'Motion Graphic Animators',
+      'Servicios de Omnicanalidad UX /UI',
+      'Multimedia Graphic Designer',
+      'Servicios creativos de Marketing',
+      'Soluciones Adhoc con tu Tecnología',
+    ]
+  }
+]
+
 const ConsultingServicesData = [
   {
     title: "ARQUITECTURA DE SOLUCIONES Y APLICACIONES",
@@ -220,6 +294,7 @@ const WeSolveNeedsData = [
 
 export {
   Solutions,
+  Roles,
   ConsultingServicesData,
   WeSolveNeedsData,
 }
