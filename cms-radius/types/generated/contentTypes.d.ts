@@ -794,6 +794,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -806,6 +807,8 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'manyToMany',
       'api::post.post'
     >;
+    bgColor: Attribute.String;
+    textColor: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

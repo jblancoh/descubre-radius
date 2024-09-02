@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category"
+    "displayName": "Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +24,14 @@
       "relation": "manyToMany",
       "target": "api::post.post",
       "inversedBy": "categories"
+    },
+    "bgColor": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "textColor": {
+      "type": "string"
     }
   }
 }
