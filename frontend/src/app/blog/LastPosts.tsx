@@ -41,6 +41,8 @@ export type BlogPost = {
         id: string;
         attributes: {
           name: string;
+          bgColor: string;
+          textColor: string;
         }
       }[];
     }
@@ -120,8 +122,8 @@ const LastPosts:FC = () => {
                       key={category.attributes.name}
                       className="rounded-full w-fit p-2"
                       style={{
-                        backgroundColor: CategoryColors[category.attributes.name],
-                        color: CategoryColorsText[category.attributes.name]
+                        backgroundColor: category.attributes.bgColor || CategoryColors[category.attributes.name],
+                        color: category.attributes.textColor || CategoryColorsText[category.attributes.name]
                       }}
                     >
                       <Label className="text-sm w-auto">
