@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Tech',
   openGraph: {
     title: 'Tech - Descubreradius',
-    description: "Somos una consultora tecnológica, orgullosamente mexicana, que ha desarrollado distintas verticales de negocio para apoyar la transformación digital de la mano de nuestros clientes.",
+    description: "En Radius, impulsamos la transformación digital de tu negocio con soluciones tecnológicas a medida, desde desarrollo de software hasta infraestructura avanzada, garantizando innovación y eficiencia.",
     images: [''],
   },
 }

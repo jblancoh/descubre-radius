@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Descubreradius",
   },
   openGraph: {
-    description: "Somos una consultora tecnológica, orgullosamente mexicana, que ha desarrollado distintas verticales de negocio para apoyar la transformación digital de la mano de nuestros clientes.",
+    description: "Descubre Radius, una consultora líder en transformación digital que ofrece soluciones tecnológicas y estratégicas holísticas e innovadoras. Conócenos, Radius te puede llevar al futuro.",
     images: [''],
   },
 };

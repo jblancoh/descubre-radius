@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import { Carousel } from "@/components/ui/carousel";
 import CarouselHome from "@/components/CarouselHome";
 import TypesSolutions from "@/components/TypesSolutions";
+import UseCasesBanner from "@/components/UseCasesBanner";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <BannerMenu/>
       <BannerExperts/>
       <BannerProvideSolutions/>
+      <UseCasesBanner />
       <SectorExperience /> 
       <WhyRadius />
       <DiscoverMaturityLevel />
