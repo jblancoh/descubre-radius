@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Blog',
   openGraph: {
     title: 'Blog - Descubreradius',
-    description: "Somos una consultora tecnológica, orgullosamente mexicana, que ha desarrollado distintas verticales de negocio para apoyar la transformación digital de la mano de nuestros clientes.",
+    description: "Explora el blog de Radius para obtener insights estratégicos sobre Data y Analítica, Tecnología, Innovación y más. Descubre cómo estas tendencias pueden transformar tu negocio y mantenerte a la vanguardia.",
     images: [''],
   },
 }
