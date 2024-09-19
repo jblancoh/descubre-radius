@@ -7,7 +7,7 @@ const getLastArticles = async (): Promise<{ data: any, error: any }> => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/posts?fields[0]=title&fields[1]=created&fields[2]=description&fields[3]=slug&populate[0]=cover&populate[2]=writer?randomSort=true&pagination[pageSize]=4`, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
       cache: "no-store"
     });

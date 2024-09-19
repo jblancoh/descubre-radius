@@ -49,7 +49,7 @@ export const sendContact = async (prevState: any, data: FormData) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_CONTACT_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_CONTACT_KEY}`
       },
       body: JSON.stringify(rawData),
     })
