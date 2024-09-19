@@ -1,12 +1,12 @@
-'use client'
-import { sendContact } from "@/actions/contact"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { FC, useRef } from "react"
-import { useFormState } from "react-dom"
+'use client';
+import { sendContact } from "@/actions/contact";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import React, { useRef, forwardRef } from "react";
+import { useFormState } from "react-dom";
 import {
   CountryIso2,
   defaultCountries,
@@ -14,9 +14,9 @@ import {
   parseCountry,
   usePhoneInput,
 } from 'react-international-phone';
-import { toast } from "sonner"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
-import Link from "next/link"
+import { toast } from "sonner";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
+import Link from "next/link";
 
 const initialState = {
   name: '',
@@ -25,10 +25,10 @@ const initialState = {
   phone: '',
   company: '',
   privacyPolicy: false
-}
+};
 
-const Contactus: FC = () => {
-  const [state, formAction] = useFormState(sendContact, initialState)
+const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props, ref) => {
+  const [state, formAction] = useFormState(sendContact, initialState);
   const { inputValue, handlePhoneValueChange, country, setCountry } =
     usePhoneInput({
       defaultCountry: 'mx',
@@ -36,9 +36,10 @@ const Contactus: FC = () => {
       countries: defaultCountries,
     });
 
-  const formRef = useRef<HTMLFormElement>(null)
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
-    <div className="bg-black-200 w-full">
+    <div className="bg-black-200 w-full" ref={ref}>
       <div className="container p-8">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="space-y-6">
@@ -48,18 +49,18 @@ const Contactus: FC = () => {
               <br />
               discover new opportunities, and grow your business.
               Your brand is our challenge!
+              
             </p>
             <div className="space-y-2">
-              <p className="text-white-600">Call us: +52 55 2911 2989</p>
               <p className="text-white-600">hello@radiustech.us</p>
             </div>
           </div>
           <div className="space-y-4 p-8 bg-white rounded-lg">
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
-              formAction(formData)
-              if (state.errors) return toast.error('Error sending message')
-              toast.success('Message sent successfully')
-              formRef.current?.reset()
+              formAction(formData);
+              if (state.errors) return toast.error('Error sending message');
+              toast.success('Message sent successfully');
+              formRef.current?.reset();
             }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col">
@@ -100,7 +101,7 @@ const Contactus: FC = () => {
                       <SelectContent>
                         {
                           defaultCountries.map((c) => {
-                            const country = parseCountry(c)
+                            const country = parseCountry(c);
                             return (
                               <SelectItem
                                 key={country.iso2}
@@ -162,7 +163,7 @@ const Contactus: FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+});
 
 export default Contactus;

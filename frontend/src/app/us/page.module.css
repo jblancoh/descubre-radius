@@ -6,7 +6,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
-    height: 50px; /* Ajusta la altura según sea necesario */
+    height: 65px; /* Ajusta la altura según sea necesario */
     border-bottom: 1px solid #262626 /* Borde blanco en la parte inferior */
   }
   
@@ -94,16 +94,11 @@
     background-color: #FA484B;
     width: 30px;
     height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
     
-  }
-  
-  @keyframes rotateV {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
   }
   
   .heroDescription {
@@ -139,6 +134,10 @@
     background-color: #FA484B; /* Color rojo */
     margin-left: 10px; /* Espacio entre el texto y el cuadrado */
     position: relative; /* Para que el SVG ocupe todo el cuadrado */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
     transition: transform 0.3s; /* Transición suave para el movimiento */
   }
   
@@ -216,14 +215,25 @@
     margin: 0;
     opacity: 0;
     transform: translateX(100vw); /* Empieza fuera de la vista a la derecha */
-    animation: slideIn 1s forwards; /* Aplica la animación */
+    animation: none; /* Sin animación por defecto */
   }
   
-  /* Estilo para la primera letra en rojo y mayúsculas */
+  .footerWords.animate .word {
+    animation: slideIn 1s forwards; /* Aplica la animación solo cuando se activa la clase */
+  }
+  
   .footerWords .word span {
     color: #FA484B; /* Color rojo */
     text-transform: uppercase;
   }
+  
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Llega a su posición original */
+    }
+  }
+  
   .footerCopyright {
     display: flex;
     justify-content: space-between; /* Espacio entre el copyright y las redes sociales */
@@ -317,31 +327,60 @@
     font-weight: 400; /* Peso del subtítulo */
     color: white; /* Color del subtítulo */
   }
-
-
-  /* Card Container Styles */
-.cardsContainer {
+  
+  .cardsContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en desktop */
     gap: 20px;
+    justify-content: center; /* Centrar en desktop */
   }
   
- /* Card Container Styles */
-.cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  .card {
+    min-width: 254px; /* Ancho mínimo para cada tarjeta */
+    flex: 0 0 auto; /* Mantener el tamaño de las tarjetas */
   }
   
-/* Card Container Styles */
-.cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  @media (max-width: 600px) {
+    .cardsContainer {
+      flex-wrap: nowrap; /* Evitar que las tarjetas se envuelvan en mobile */
+      overflow-x: auto; /* Permitir desplazamiento horizontal en mobile */
+      justify-content: flex-start; /* Alinear al inicio en mobile */
+    }
   }
+
+  .scrollIndicator {
+    display: none; /* Ocultar por defecto */
+    height: 5px; /* Altura de la barra */
+    background-color: #191919; /* Color gris de la barra */
+    border-radius: 2.5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+    width: 100%; /* Ancho completo */
+    position: relative; /* Para el posicionamiento del cuadrado */
+  }
+  
+  .scrollThumb {
+    position: absolute;
+    top: 0; /* Posicionamiento en la parte superior */
+    left: 0; /* Comienza desde la izquierda */
+    height: 100%; /* Altura completa de la barra */
+    width: 20px; /* Ancho del cuadrado */
+    background-color: #ffffff; /* Color blanco del cuadrado */
+    border-radius: 2.5px; /* Bordes redondeados */
+  }
+  
+  @media (max-width: 600px) {
+    .scrollIndicator {
+      display: block; /* Mostrar solo en mobile */
+    }
+  }
+  
+  
+  
+  
+
+    
+
+
   
   /* Card Component */
   .card {
@@ -404,7 +443,7 @@
     position: absolute;
     bottom: 20px; /* Espacio desde el fondo del card */
     left: 300px;
-    top: 120px;
+    top: 130px;
     max-width: 220px;
     width: 100%;
     color: inherit; /* Hereda el color del título/subtítulo */
@@ -557,7 +596,7 @@
   
   .brandsSection {
     text-align: center;
-    padding: 50px 0; /* Ajusta el padding según necesites */
+    padding: 100px 0; /* Ajusta el padding según necesites */
   }
   
   .brandsTitle {

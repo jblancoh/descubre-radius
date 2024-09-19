@@ -1,0 +1,675 @@
+/* Header Styles */
+.header {
+    background-color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    height: 65px; /* Ajusta la altura según sea necesario */
+    border-bottom: 1px solid #262626 /* Borde blanco en la parte inferior */
+  }
+  
+  .header img {
+    height: 44px; /* Ajusta el tamaño del logo */
+    width: 122px;
+    object-fit: cover; /* Para que la imagen no se distorsione */
+  }
+
+  .font-archia{
+    font-family: 'Archia', sans-serif!important;
+  }
+  .font-open-sans{
+    font-family: 'Open Sans', sans-serif!important;
+
+  }
+  
+
+
+/* Hero Styles */
+.hero {
+    position: relative;
+    background-color: black;
+    color: white;
+    height: 500px; /* Ajusta la altura según sea necesario */
+    background-image: url('/img/hero_img.png'); /* Imagen de fondo */
+    background-size: cover; /* Para que la imagen cubra el área */
+    background-position: center; /* Para centrar la imagen */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heroContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea los ítems al inicio para evitar solapamientos */
+    width: 100%;
+    max-width: 1200px; /* Ajusta el máximo ancho según sea necesario */
+  }
+  
+  .heroTextWrapper {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinea el texto a la derecha */
+    width: 100%; /* Ajusta el máximo ancho según sea necesario */
+    position: relative;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Permite que los elementos hagan wrap */
+  }
+  
+  @media (max-width: 600px) {
+    .heroTextWrapper {
+      justify-content: center; /* Centra el contenido cuando haga wrap */
+    }
+  }
+  
+  .heroTextLeft {
+    font-family: 'Archia', sans-serif;
+    font-size: 54px;
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-bottom: 20px;
+    font-weight: 600;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heroInnovation {
+    color: white;
+    display: inline;
+  }
+  .heroEmpowering {
+    margin-right: 40px;
+    color: white;
+    display: inline;
+  }
+  
+  .heroRedV {
+    color: #FA484B;
+    display: inline-block;
+    animation: rotateV 1s ease-out;
+  }
+  .redRectangle{
+    background-color: #FA484B;
+    width: 80px;
+    height: 2px;
+    margin-bottom: 20px;
+  }
+  .redsquare{
+    background-color: #FA484B;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    
+  }
+  
+  .heroDescription {
+    font-family: 'Archia', sans-serif;
+    font-size: 16px;
+    margin: 20px 0;
+    max-width: 400px; /* Ajusta el máximo ancho del contenedor de la derecha */
+    text-align: left; /* Alinea el texto a la derecha */
+    white-space: normal; /* Permite que el texto se ajuste normalmente */
+    padding: 10px;
+  }
+  
+  .ctaButton {
+    position: relative;
+    padding: 10px 0px; /* Ajusta el padding según sea necesario */
+    background-color: transparent; /* Fondo transparente para el botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer;
+    display: flex; /* Flex para alinear el contenido */
+    align-items: center; /* Alinear verticalmente */
+    transition: font-weight 0.3s; /* Transición suave para el peso de la fuente */
+    font-weight: 400;
+  }
+  
+  .ctaButton:hover {
+    font-weight: 700; /* Cambiar a peso de fuente 700 al hacer hover */
+  }
+  
+  .redSquare {
+    width: 18px; /* Ancho del cuadrado */
+    height: 18px; /* Alto del cuadrado */
+    background-color: #FA484B; /* Color rojo */
+    margin-left: 10px; /* Espacio entre el texto y el cuadrado */
+    position: relative; /* Para que el SVG ocupe todo el cuadrado */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    transition: transform 0.3s; /* Transición suave para el movimiento */
+  }
+  
+  .ctaButton:hover .redSquare {
+    transform: translateX(5px); /* Mueve el cuadrado hacia la derecha al hacer hover */
+  }
+  
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Alinea las secciones horizontalmente */
+    align-items: flex-start;
+    border-top: 1px solid #1A1A1A; /* Stroke arriba del copyright */
+    overflow: hidden;
+    
+  }
+  
+  .footerSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  @media (max-width: 600px) {
+    .footer {
+      flex-direction: column; /* Cambia la dirección del flex a columna */
+      align-items: flex-start; /* Alinea los elementos al inicio */
+      gap: 40px;
+    }
+  }
+  
+  .footerLogo img {
+    max-width: 290px; /* Ajusta el tamaño según sea necesario */
+    object-fit: contain;
+  }
+  
+  .footerCertifications {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Archia', sans-serif;
+  }
+  
+  .certificationsImages {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .certificationsImages img {
+    max-width: 80px; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  .footerWords {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea las palabras a la izquierda */
+    position: relative; /* Necesario para la animación */
+    gap: 5px; /* Espaciado reducido entre palabras */
+  }
+  
+  .footerWords .word {
+    font-family: 'Archia', sans-serif;
+    font-size: 20px; /* Ajusta el tamaño según sea necesario */
+    font-weight: 600;
+    color: white; /* Color por defecto */
+    margin: 0;
+    opacity: 0;
+    transform: translateX(100vw); /* Empieza fuera de la vista a la derecha */
+    animation: none; /* Sin animación por defecto */
+  }
+  
+  .footerWords.animate .word {
+    animation: slideIn 1s forwards; /* Aplica la animación solo cuando se activa la clase */
+  }
+  
+  .footerWords .word span {
+    color: #FA484B; /* Color rojo */
+    text-transform: uppercase;
+  }
+  
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Llega a su posición original */
+    }
+  }
+  
+  .footerCopyright {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el copyright y las redes sociales */
+    align-items: center;
+    padding: 20px 20px; /* Espaciado arriba y abajo */
+    margin-bottom: 20px;
+    font-weight: 200; /* Peso de la fuente ligero */
+    font-size: 14px; /* Tamaño de la fuente */
+    color: #ffffff; /* Color del texto */
+    border-top: 1px solid #1A1A1A; /* Stroke arriba del copyright */
+  }
+  .copyCont{
+    padding: 0px 20px;
+
+  }
+  
+  .socialLogos {
+    display: flex;
+    gap: 10px; /* Espacio entre logos */
+  }
+  .socialLogos img {
+    transition: transform 0.1s ease-in-out; /* Suaviza la transformación */
+  }
+  
+  .socialLogos img:hover {
+    animation: vibrate 0.1s infinite; /* Añade la animación al hacer hover */
+  }
+  
+  @keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 0); }
+    40% { transform: translate(2px, 0); }
+    60% { transform: translate(-2px, 0); }
+    80% { transform: translate(2px, 0); }
+    100% { transform: translate(0); }
+  }
+  
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100vw); /* Empieza fuera de la vista a la derecha */
+      opacity: 0; /* Empieza invisible */
+    }
+    100% {
+      transform: translateX(0); /* Termina en la posición final */
+      opacity: 1; /* Termina visible */
+    }
+  }
+  
+  /* Aplica retraso a cada palabra, reduciendo el retraso a la mitad */
+  .footerWords .word:nth-child(1) {
+    animation-delay: 0.5s; /* Retraso para la primera palabra */
+  }
+  .footerWords .word:nth-child(2) {
+    animation-delay: 1s; /* Retraso para la segunda palabra */
+  }
+  .footerWords .word:nth-child(3) {
+    animation-delay: 1.5s; /* Retraso para la tercera palabra */
+  }
+  .footerWords .word:nth-child(4) {
+    animation-delay: 2s; /* Retraso para la cuarta palabra */
+  }
+  .footerWords .word:nth-child(5) {
+    animation-delay: 2.5s; /* Retraso para la quinta palabra */
+  }
+  .footerWords .word:nth-child(6) {
+    animation-delay: 3s; /* Retraso para la sexta palabra */
+  }
+
+  .solutionsContent {
+    text-align: center; /* Centrar el texto */
+    padding: 50px 20px; 
+    
+  }
+  .titlesContainer {
+    padding-bottom: 30px;
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .solutionsTitle {
+    font-family: 'Archia', sans-serif; /* Fuente Archia */
+    font-size: 24px; /* Tamaño del título */
+    font-weight: 600; /* Peso del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: white; /* Color del título */
+  }
+  
+  .solutionsSubtitle {
+    font-family: 'Archia', sans-serif; /* Fuente Archia */
+    font-size: 16px; /* Tamaño del subtítulo */
+    font-weight: 400; /* Peso del subtítulo */
+    color: white; /* Color del subtítulo */
+  }
+  
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en desktop */
+    gap: 20px;
+    justify-content: center; /* Centrar en desktop */
+  }
+  
+  .card {
+    min-width: 254px; /* Ancho mínimo para cada tarjeta */
+    flex: 0 0 auto; /* Mantener el tamaño de las tarjetas */
+  }
+  
+  @media (max-width: 600px) {
+    .cardsContainer {
+      flex-wrap: nowrap; /* Evitar que las tarjetas se envuelvan en mobile */
+      overflow-x: auto; /* Permitir desplazamiento horizontal en mobile */
+      justify-content: flex-start; /* Alinear al inicio en mobile */
+    }
+  }
+
+  .scrollIndicator {
+    display: none; /* Ocultar por defecto */
+    height: 5px; /* Altura de la barra */
+    background-color: #191919; /* Color gris de la barra */
+    border-radius: 2.5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+    width: 100%; /* Ancho completo */
+    position: relative; /* Para el posicionamiento del cuadrado */
+  }
+  
+  .scrollThumb {
+    position: absolute;
+    top: 0; /* Posicionamiento en la parte superior */
+    left: 0; /* Comienza desde la izquierda */
+    height: 100%; /* Altura completa de la barra */
+    width: 20px; /* Ancho del cuadrado */
+    background-color: #ffffff; /* Color blanco del cuadrado */
+    border-radius: 2.5px; /* Bordes redondeados */
+  }
+  
+  @media (max-width: 600px) {
+    .scrollIndicator {
+      display: block; /* Mostrar solo en mobile */
+    }
+  }
+  
+  
+  
+  
+
+    
+
+
+  
+  /* Card Component */
+  .card {
+    position: relative;
+    width: 254px; /* Ancho ajustado a 254px */
+    height: 330px; /* Altura ajustada a 330px */
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.10s, box-shadow 0.10s;
+    cursor: pointer;
+    background-color: #333; /* Fondo del card */
+  }
+  
+  /* Wrapper for Image */
+  .cardImageWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Imagen debajo del contenido */
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  /* Image Styles */
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  /* Card Content Styles */
+  .cardContent {
+    position: relative;
+    padding: 20px;
+    z-index: 2; /* Contenido sobre la imagen */
+    
+  }
+  
+  /* Title Styles */
+  .cardTitle {
+    font-family: 'Archia', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  /* Subtitle Styles */
+  .cardSubtitle {
+    font-family: 'Archia', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  /* Details Styles */
+  .cardDetails {
+    position: absolute;
+    bottom: 20px; /* Espacio desde el fondo del card */
+    left: 300px;
+    top: 130px;
+    max-width: 220px;
+    width: 100%;
+    color: inherit; /* Hereda el color del título/subtítulo */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: 'Open Sans', sans-serif;
+    white-space: pre-line; /* Permite que los saltos de línea se respeten */
+    font-size: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cardDetailItem {
+    margin-bottom: 5px;
+  }
+  
+  /* Hover Effect */
+  .card:hover .cardImage {
+    transform: scale(1.4) translate(5%, 5%); /* Ajusta el desplazamiento según sea necesario */
+    filter: blur(50px);
+  }
+  
+  .card:hover .cardDetails {
+    opacity: 1;
+    transform: translateX(0); /* Desplazamiento desde la derecha */
+    left: 10px;
+    color: inherit;
+    z-index: 10;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modularSolutionsSection {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Ocultar el SVG que sale del contenedor */
+    background-color: transparent; /* Fondo transparente */
+    color: white; /* Color del texto por defecto */
+    justify-content: space-around;
+    height: 450px;
+  }
+  
+  /* Media query para pantallas menores a 600px */
+  @media (max-width: 600px) {
+    .modularSolutionsSection {
+      flex-direction: column; /* Cambia la dirección del flex a columna */
+      height: auto; /* Ajusta la altura a auto */
+      padding: 20px; /* Agrega un poco de padding si lo deseas */
+    }
+  
+    .leftContainer, 
+    .rightContainer {
+      width: 100%; /* Asegúrate de que los contenedores ocupen el 100% */
+      
+    }
+  
+    .rightContainer {
+      opacity: 0; /* Mantiene la imagen oculta inicialmente */
+      transition: opacity 0.5s ease 3s; /* Transición de la opacidad */
+      object-fit: cover;
+      justify-content: center;
+    }
+  
+    .modularSolutionsSection:hover .rightContainer {
+      opacity: 1; /* Hace visible la imagen al hacer hover */
+    }
+    
+      
+  }
+  .holisticImage {
+    object-fit: contain; /* Esto asegura que la imagen mantenga su proporción */
+    max-width: 400px; /* Asegúrate de que la imagen ocupe todo el contenedor */
+    max-height: 400px; /* Asegúrate de que la imagen ocupe todo el contenedor */
+  }
+  
+  
+  .leftContainer {
+    flex: 1;
+    padding: 20px;
+    z-index: 2; /* Asegura que el texto esté sobre el SVG */
+    max-width: 500px;
+  }
+  .rightContainer {
+    flex: 1;
+    padding: 20px;
+    z-index: 2; /* Asegura que el texto esté sobre el SVG */
+    max-width: 500px;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease 50ms; 
+  }
+  .modularSolutionsSection:hover .rightContainer {
+    opacity: 1; /* Muestra la imagen al hacer hover */
+  }
+  
+  .sectionTitle {
+    font-family: 'Archia', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .sectionSubtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: transparent; /* Botón transparente */
+    border: none; /* Sin borde */
+    cursor: pointer;
+  }
+  
+  
+  .svgContainer {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    z-index: 1; /* SVG debajo del contenido */
+    transition: transform 0.5s; /* Transición suave para el hover */
+    transform: scale(0); /* Comienza escalado a 0 */
+  }
+  
+  
+  .modularSolutionsSection:hover .svgContainer {
+    transform: scale(11); /* Escala el SVG al hacer hover */
+    z-index: 0; /* Asegura que cubra todo */
+  }
+  
+  .modularSolutionsSection:hover {
+    color: black; /* Cambia el color del texto a negro en hover */
+  }
+  .modularSolutionsSection:hover .ctaButton {
+    color: black; /* Cambia el color del texto del botón a negro en hover */
+  }
+  
+  
+  .brandsSection {
+    text-align: center;
+    padding: 100px 0; /* Ajusta el padding según necesites */
+  }
+  
+  .brandsTitle {
+    font-family: 'Archia', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  .trustedUs {
+    color: red; /* Color rojo para "us" */
+  }
+  
+  .gallery {
+    display: flex;
+    overflow: hidden; /* Ocultar el desbordamiento */
+    width: 100%;
+    position: relative;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 10% 90%, transparent); /* Degradado */
+  
+  }
+  
+  .logos {
+    display: flex;
+    animation: scroll 30s linear infinite; /* Animación de desplazamiento */
+    object-fit: contain;
+    
+  }
+  
+  .logo {
+    margin: 0 20px; /* Espaciado entre los logos */
+    height: 50px; /* Ajusta la altura según necesites */
+  }
+  
+  /* Animación para el carrusel */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Desplazamiento total al 50% para que se vea suave */
+    }
+  }
+  
+
+  
+  /* Responsive Design for Hero */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 20px;
+      height: auto;
+    }
+  
+    .heroContent {
+      flex-direction: column;
+      align-items: center; /* Centra los elementos en pantallas pequeñas */
+    }
+  
+    .heroTextLeft, .heroInnovation {
+      font-size: 40px;
+    }
+  
+    .heroDescription {
+      font-size: 16px;
+    }
+  }
+  
+  
