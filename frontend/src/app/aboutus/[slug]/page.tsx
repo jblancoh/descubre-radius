@@ -14,7 +14,7 @@ const fetchWorker = async (slug: string): Promise<{ data: any, error: any }> => 
     const response = await fetch(
       url, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
       cache: "no-store"
     });

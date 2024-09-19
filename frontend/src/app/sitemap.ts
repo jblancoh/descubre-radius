@@ -5,7 +5,7 @@ const getAllPosts = async () => {
   const response = await fetch(
     process.env.NEXT_PUBLIC_API_URL + '/api/posts?sort=id&' + fieldSelection, {
     headers: {
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
     },
   });
   const result = await response.json();
