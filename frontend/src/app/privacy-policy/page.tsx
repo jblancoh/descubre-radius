@@ -28,11 +28,11 @@ const PrivacyPolicy = () => {
       <Paragraph><strong>{"Right to Rectification"}</strong> Each Holder has the right to have their Personal Data rectified...</Paragraph>
       <Paragraph><strong>{"Right of Cancellation"}</strong> Each Holder has the right to request at any time that their Personal Data be deleted...</Paragraph>
       <Paragraph><strong>{"Right of Opposition"}</strong> The Holder has the right to request at any time, whenever they have a legitimate cause...</Paragraph>
-      <Paragraph><strong>{"Responsible Party"}</strong> Refers to the natural or legal person who decides on the processing of the Holder's Personal Data...</Paragraph>
+      <Paragraph><strong>{"Responsible Party"}</strong> {`Refers to the natural or legal person who decides on the processing of the Holder's Personal Data...`}</Paragraph>
       <Paragraph><strong>{"Data Processor"}</strong> Refers to the natural or legal person who, alone or jointly with others, processes Personal Data on behalf of the Responsible Party...</Paragraph>
       <Paragraph><strong>{"Holder"}</strong> Refers to the natural person who is the owner of the Personal Data...</Paragraph>
 
-      <Subtitle>2. HOLDER'S CONSENT.</Subtitle>
+      <Subtitle>{`2. HOLDER'S CONSENT.`}</Subtitle>
       <Paragraph>For the purposes of the LFPDP, particularly its Article 17, the Holder states (i) that this Privacy Notice has been made known to them by the Responsible Party...</Paragraph>
       <Paragraph>If the Holder does not oppose the terms of this Privacy Notice within the following 30 days...</Paragraph>     
 
@@ -40,22 +40,22 @@ const PrivacyPolicy = () => {
       <Paragraph><strong>{"RADIUS"}</strong> may collect personal data from the Holder through direct and/or personal delivery by any means of contact...</Paragraph>
       <Paragraph>{"RADIUS"} collects and processes identification, financial and/or asset, academic, and employment Personal Data...</Paragraph>
       <Paragraph>We collect data when browsing the websites and web pages of LEE & MILLER, S.C. The automatic data capture tools...</Paragraph>
-      <Paragraph><strong>Use of Cookies.</strong> – The proper functioning of LEE & MILLER, S.C.'s sites...</Paragraph>
+      <Paragraph><strong>Use of Cookies.</strong> {`– The proper functioning of LEE & MILLER, S.C.'s sites...`}</Paragraph>
       <Paragraph><strong>Use of Web Beacons</strong>...</Paragraph>
       <Paragraph><strong>Links in LEE & MILLER, S.C. Emails.</strong>...</Paragraph>
       <Paragraph>Only for the case of job applicants and employees, sensitive data regarding health and origin are requested...</Paragraph>
-      <Paragraph>The Holder's Personal Data are collected and processed by the Responsible Party...</Paragraph>
+      <Paragraph>{`The Holder's Personal Data are collected and processed by the Responsible Party...`}</Paragraph>
 
       <Subtitle>4. PURPOSE OF PERSONAL DATA.</Subtitle>
-      <Paragraph><strong>PRIMARY PURPOSES.</strong> {"RADIUS"} will process the Holder's personal data to carry out activities and management...</Paragraph>
-      <Paragraph><strong>SECONDARY PURPOSES.</strong> In addition, {"RADIUS"} may process the Holder's Personal Data to carry out activities related to commercial prospecting...</Paragraph>
+      <Paragraph><strong>PRIMARY PURPOSES.</strong> {`"RADIUS" will process the Holder's personal data to carry out activities and management...`}</Paragraph>
+      <Paragraph><strong>SECONDARY PURPOSES.</strong> {`In addition, "RADIUS" may process the Holder's Personal Data to carry out activities related to commercial prospecting...`}</Paragraph>
 
       <Subtitle>5. PERSONAL DATA TRANSFER.</Subtitle>
-      <Paragraph>The Responsible Party may transfer the Holder's Personal Data to its Data Processors to comply with the purposes set out in this Privacy Notice...</Paragraph>
-      <Paragraph>Additionally, {"RADIUS"} may transfer the Holder's Personal Data to third parties in the following cases:</Paragraph>
+      <Paragraph>{`The Responsible Party may transfer the Holder's Personal Data to its Data Processors to comply with the purposes set out in this Privacy Notice...`}</Paragraph>
+      <Paragraph>{`Additionally, "RADIUS" may transfer the Holder's Personal Data to third parties in the following cases:`}</Paragraph>
       <Paragraph>(i) When required by applicable law or a competent authority...</Paragraph>
       
-      <Subtitle>6. HOLDER'S RIGHTS.</Subtitle>
+      <Subtitle>{`6. HOLDER'S RIGHTS.`}</Subtitle>
       <Paragraph>In accordance with the LFPDP, the Holder has the right to access, rectify, cancel, or oppose the processing of their Personal Data...</Paragraph>
 
       <Subtitle>7. CHANGES TO THIS PRIVACY NOTICE.</Subtitle>
