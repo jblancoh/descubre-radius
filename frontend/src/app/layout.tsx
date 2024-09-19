@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Descubreradius",
   },
   openGraph: {
-    description: "Somos una consultora tecnológica, orgullosamente mexicana, que ha desarrollado distintas verticales de negocio para apoyar la transformación digital de la mano de nuestros clientes.",
+    description: "Descubre Radius, una consultora líder en transformación digital que ofrece soluciones tecnológicas y estratégicas holísticas e innovadoras. Conócenos, Radius te puede llevar al futuro.",
     images: [''],
   },
 };
@@ -28,17 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body 
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
-        <NavBar />
+    <html lang="en">
+      <body>
+        {/*<NavBar />*/}
         {children}
-        <Footer />
-        <Toaster />
+        {/* {<Footer /> */}
+       {/* <Toaster />*/}
       </body>
     </html>
   );
