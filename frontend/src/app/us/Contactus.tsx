@@ -166,4 +166,6 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
   );
 });
 
+Contactus.displayName = 'Contactus';
+
 export default Contactus;

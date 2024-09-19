@@ -86,7 +86,7 @@ const HomePage = () => {
             </div>
             <div className={styles.heroDescription}>
               <div className={styles.redRectangle}></div>
-              From the seamless integration of digital solutions to the data-driven decisions that propel industries forward, we transform challenges into opportunities. Whether it's optimizing processes, innovating products, or enhancing customer experiences, together, we create the future where businesses thrive.
+              {`From the seamless integration of digital solutions to the data-driven decisions that propel industries forward, we transform challenges into opportunities. Whether it's optimizing processes, innovating products, or enhancing customer experiences, together, we create the future where businesses thrive.`}
               <button className={styles.ctaButton} onClick={scrollToContactUs}>
                 Start your transformation today
                 <div className={styles.redSquare}>
@@ -104,7 +104,7 @@ const HomePage = () => {
           <div className={styles.titlesContainer}>
             <h2 className={styles.solutionsTitle}>Our Solutions</h2>
             <p className={styles.solutionsSubtitle}>
-              We offer comprehensive, agile services designed to accelerate your business's growth and deliver lasting value.
+              {`We offer comprehensive, agile services designed to accelerate your business's growth and deliver lasting value.`}
             </p>
           </div>
           <div className={styles.cardsContainer} ref={cardsContainerRef}>
