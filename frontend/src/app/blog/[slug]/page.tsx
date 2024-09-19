@@ -17,7 +17,7 @@ const fetchBlogPost = async (slug: string): Promise<{ data: any, error: any }> =
     const response = await fetch(
       url, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
       cache: "no-store"
     });
@@ -37,7 +37,7 @@ export async function generateMetadata(
   const response = await fetch(
     url, {
     headers: {
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+      "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
     },
     cache: "no-store"
   });
@@ -64,7 +64,7 @@ export async function generateStaticParams() {
     const response = await fetch(
       url, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
     });
     const result = await response.json();

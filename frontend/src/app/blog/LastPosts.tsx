@@ -57,7 +57,7 @@ const getBlogData = async (currentPage: number = 1): Promise<{ data: any, pagina
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/posts?sort=id&${fieldSelection}&${pagination}`, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
       cache: "no-store"
     });

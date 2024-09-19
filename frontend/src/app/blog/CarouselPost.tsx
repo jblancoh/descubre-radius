@@ -16,7 +16,7 @@ const getBlogData = async (): Promise<{ data: any, error: any }> => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/posts?fields[0]=title&fields[1]=created&populate[0]=cover&populate[1]=categories&populate[2]=writer?randomSort=true&pagination[pageSize]=3`, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+        "Authorization": `Bearer ${process.env.STRAPI_API_KEY}`
       },
       cache: "no-store"
     });
