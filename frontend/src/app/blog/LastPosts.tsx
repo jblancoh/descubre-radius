@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { CategoryColors, CategoryColorsText } from "@/lib/colors";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator"
-import { FC, use, useState, useCallback, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import {
   Pagination,
   PaginationContent,

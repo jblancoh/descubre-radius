@@ -1,12 +1,12 @@
 import { FC } from "react";
-import LastPosts from "./LastPosts";
-import CarouselPost from "./CarouselPost";
-import PopularArticles from "./PopularArticles";
+// import LastPosts from "./LastPosts";
+// import CarouselPost from "./CarouselPost";
+// import PopularArticles from "./PopularArticles";
 
 const Page:FC = async() => {
   return (
     <div className="container mx-auto p-4">
-      <CarouselPost />
+      {/* <CarouselPost />
       <div className="grid grid-cols-1 md:grid-cols-4">
         <div className="col-span-1 md:col-span-3">
           <LastPosts />
@@ -14,7 +14,7 @@ const Page:FC = async() => {
         <div className="col-span-1 mx-4">
           <PopularArticles />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

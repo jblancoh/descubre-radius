@@ -29,11 +29,10 @@ const getBlogData = async (): Promise<{ data: any, error: any }> => {
 
 const CarouselPost: FC = () => {
   const [data, setData] = useState<BlogPost[]>([]);
-  const [error, setError] = useState()
 
   useEffect(() => {
     const getData = async () => {
-      const {data, error} = await getBlogData();
+      const {data} = await getBlogData();
       setData(data);
     }
     

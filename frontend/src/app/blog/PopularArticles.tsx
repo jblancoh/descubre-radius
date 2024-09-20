@@ -20,7 +20,7 @@ const getPoularArticles = async (): Promise<{ data: any, error: any }> => {
 }
 
 const PopularArticles: FC = async() => {
-  const { data, error } = await getPoularArticles();
+  const { data } = await getPoularArticles();
   return <Card>
     <CardHeader>
       <CardTitle>
