@@ -35,14 +35,14 @@ module.exports = ({env}) => ({
         host: 'smtp-mail.outlook.com',
         port: 587,
         auth: {
-          user: 'zlatanjon@hotmail.com',
-          pass: 'tmpawqphfodwsysf'
+          user: env('EMAIL_USER'),
+          pass: env('EMAIL_PASSWORD'),
         },
         secure: false,
       },
       settings: {
-        defaultFrom: 'zlatanjon@hotmail.com',
-        defaultReplyTo: 'zlatanjon@hotmail.com',
+        defaultFrom: env('EMAIL_USER'),
+        defaultReplyTo: env('EMAIL_USER')
       }
     }
   },

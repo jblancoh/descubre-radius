@@ -37,6 +37,15 @@
       "options": {
         "country": "mx"
       }
+    },
+    "originCountry": {
+      "type": "enumeration",
+      "enum": [
+        "mx",
+        "us"
+      ],
+      "default": "mx",
+      "required": true
     }
   }
 }
