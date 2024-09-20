@@ -38,11 +38,12 @@
         "country": "mx"
       }
     },
-    "originCountry": {
+    "origin": {
       "type": "enumeration",
       "enum": [
         "mx",
-        "usa"
+        "usa",
+        "masterclass"
       ],
       "default": "mx",
       "required": true
