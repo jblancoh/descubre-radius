@@ -851,7 +851,7 @@ export interface ApiContactMessageContactMessage extends Schema.CollectionType {
           country: 'mx';
         }
       >;
-    originCountry: Attribute.Enumeration<['mx', 'us']> &
+    originCountry: Attribute.Enumeration<['mx', 'usa']> &
       Attribute.Required &
       Attribute.DefaultTo<'mx'>;
     createdAt: Attribute.DateTime;
