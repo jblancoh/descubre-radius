@@ -17,5 +17,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'], // Protect all routes except necessary ones
+  matcher: ['/((?!api|_next/static|_next/image|img|favicon.ico).*)'], // Protect all routes except necessary ones
 }
