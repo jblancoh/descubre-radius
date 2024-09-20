@@ -3,22 +3,22 @@ import { z } from 'zod'
 
 const schema = z.object({
   name: z.string().min(1, {
-    message: 'El nombre es requerido'
+    message: 'Name is required'
   }),
   email: z.string().min(1, {
-    message: 'El email es requerido'
+    message: 'Email is required'
   }),
   message: z.string().min(1, {
-    message: 'El mensaje es requerido'
+    message: 'Message is required'
   }),
   phone: z.string().min(1, {
-    message: 'El teléfono es requerido'
+    message: 'Phone is required'
   }),
   company: z.string().min(1, {
-    message: 'La empresa es requerida'
+    message: 'Company is required'
   }),
   privacyPolicy: z.enum(['on'], {
-    message: 'La política de privacidad es requerida'
+    message: 'Privacy policy is required'
   })
 })
 
@@ -29,6 +29,7 @@ export const sendContact = async (prevState: any, data: FormData) => {
     message: data.get('message'),
     phone: data.get('phone'),
     company: data.get('company'),
+    origin: data.get('origin'),
   }
   const validatedFields = schema.safeParse({
     name: data.get('name'),
@@ -54,7 +55,7 @@ export const sendContact = async (prevState: any, data: FormData) => {
       body: JSON.stringify(rawData),
     })
     if (!response.ok) {
-      throw new Error('Error enviando mensaje de contacto')
+      throw new Error('Error sending message')
     }
     return response.json()
   } catch (error: any) {

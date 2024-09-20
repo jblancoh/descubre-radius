@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useRef, forwardRef } from "react";
+import React, { useRef, forwardRef, useEffect } from "react";
 import { useFormState } from "react-dom";
 import {
   CountryIso2,
@@ -24,7 +24,8 @@ const initialState = {
   message: '',
   phone: '',
   company: '',
-  privacyPolicy: false
+  privacyPolicy: false,
+  origin: 'masterclass',
 };
 
 const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props, ref) => {
@@ -37,6 +38,15 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
     });
 
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.errors) {
+      toast.error('Error sending message');
+    } else if (state.ok) {
+      toast.success('Message sent successfully');
+      formRef.current?.reset();
+    }
+  }, [state]);
 
   return (
     <div className="bg-black-200 w-full" ref={ref}>
@@ -52,11 +62,8 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
 
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
               formAction(formData);
-              if (state.errors) return toast.error('Error sending message');
-              toast.success('Message sent successfully');
-              formRef.current?.reset();
             }}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="flex flex-col">
                   <Input placeholder="Name" name="name" className="text-black" />
                   <p aria-live="polite" className="text-red-500">
@@ -70,7 +77,7 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="flex flex-col">
                   <Input placeholder="Email" type="email" name="email" className="text-black" />
                   <p aria-live="polite" className="text-red-500">
