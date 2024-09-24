@@ -12,15 +12,22 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"), // Cambia esto a la URL de producción cuando sea necesario
   title: {
     default: "Radius",
     template: "%s | Descubreradius",
   },
+  description: "Digital transformation consulting firm, offering customized services to deliver value to your business from the idea through to a full-scale solution.",
   openGraph: {
-    description: "Descubre Radius, una consultora líder en transformación digital que ofrece soluciones tecnológicas y estratégicas holísticas e innovadoras. Conócenos, Radius te puede llevar al futuro.",
-    images: [''],
+    description: "Digital transformation consulting firm, offering customized services to deliver value to your business from the idea through to a full-scale solution.",
+    images: ['/img/favicon.ico'], // Ruta del favicon
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/img/favicon.ico'], // Ruta del favicon
   },
 };
+
 
 export default function RootLayout({
   children,
