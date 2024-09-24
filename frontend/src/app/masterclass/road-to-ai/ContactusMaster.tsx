@@ -32,7 +32,7 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
   const [state, formAction] = useFormState(sendContact, initialState);
   const { inputValue, handlePhoneValueChange, country, setCountry } =
     usePhoneInput({
-      defaultCountry: 'mx',
+      defaultCountry: 'us', // Cambiar 'mx' por 'us'
       value: state.phone,
       countries: defaultCountries,
     });
@@ -53,12 +53,12 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
       <div className="container p-8">
         <div className="flex justify-center">
           <div className="w-full max-w-[700px] p-8 bg-white rounded-lg">
-          <h2 className="text-2xl font-bold text-gray-600 text-center mb-6">
-  Save your spot!
-</h2>
-<p className="text-1xl font-bold text-gray-500 text-center mb-4">
-  You will receive date and location for this masterclass very soon.
-</p>
+            <h2 className="text-2xl font-bold text-gray-600 text-center mb-6">
+              Save your spot!
+            </h2>
+            <p className="text-1xl font-bold text-gray-500 text-center mb-4">
+              You will receive date and location for this masterclass very soon.
+            </p>
 
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
               formAction(formData);

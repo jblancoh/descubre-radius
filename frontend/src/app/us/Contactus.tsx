@@ -32,7 +32,7 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
   const [state, formAction] = useFormState(sendContact, initialState);
   const { inputValue, handlePhoneValueChange, country, setCountry } =
     usePhoneInput({
-      defaultCountry: 'mx',
+      defaultCountry: 'us', // Cambiado a 'us'
       value: state.phone,
       countries: defaultCountries,
     });
@@ -50,7 +50,7 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
 
   return (
     <div className="bg-black-200 w-full" ref={ref}>
-      <div className="container p-8">
+      <div className="container p-8 max-w-[1200px]">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="space-y-6">
             <Label className="text-3xl font-bold"><span className="text-red-500">Work together</span></Label>
@@ -59,7 +59,6 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
               <br />
               discover new opportunities, and grow your business.
               Your brand is our challenge!
-              
             </p>
             <div className="space-y-2">
               <p className="text-white-600">hello@radiustech.us</p>
@@ -161,9 +160,7 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
                 {state?.errors?.privacyPolicy}
               </p>
               <Button className="w-full bg-red-500 text-white" type="submit" disabled={state.isLoading}>
-                {
-                  state.isLoading ? 'Sending...' : 'Send'
-                }
+                {state.isLoading ? 'Sending...' : 'Send'}
               </Button>
             </form>
           </div>
