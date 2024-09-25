@@ -5,6 +5,8 @@ import styles from './page.module.css';
 import Card from './card';
 import Contactus from './Contactus';
 import { cardData } from './cardData'; // Import the card data
+import Link from 'next/link';
+
 
 const HomePage = () => {
   const scrollThumbRef = useRef<HTMLDivElement | null>(null);
@@ -79,14 +81,14 @@ const HomePage = () => {
         <div className={styles.heroContent}>
           <div className={styles.heroTextWrapper}>
             <div className={styles.heroTextLeft}>
-              <div className={styles.heroEmpowering}>Empowering</div>
+              <div className={styles.heroEmpowering}>Data fuels decisions</div>
               <div className={styles.heroInnovation}>
-                Inno<span className={styles.heroRedV}>v</span>ation
+              Radius <span className={styles.heroRedV}> ignites </span> action
               </div>
             </div>
             <div className={styles.heroDescription}>
               <div className={styles.redRectangle}></div>
-              {`From the seamless integration of digital solutions to the data-driven decisions that propel industries forward, we transform challenges into opportunities. Whether it's optimizing processes, innovating products, or enhancing customer experiences, together, we create the future where businesses thrive.`}
+              {`Combining Data & Analytics, Tech, and Design & Innovation to create customized solutions that drive digital business transformation. We stand out by integrating creative strategies with cutting-edge technology, turning data into actionable insights.`}
               <button className={styles.ctaButton} onClick={scrollToContactUs}>
                 Start your transformation today
                 <div className={styles.redSquare}>
@@ -216,26 +218,36 @@ const HomePage = () => {
         </div>
       </footer>
 
+      
       <div className={styles.copyCont}>
-        <div className={styles.footerCopyright}>
-          <span>© 2024 Copyright</span>
-          <div className={styles.socialLogos}>
-            <a href="https://www.facebook.com/DescubreRadius/" target="_blank" rel="noopener noreferrer">
-              <Image src="/img/instagram.png" alt="Instagram" width={24} height={24} />
-            </a>
-            <a href="https://www.instagram.com/descubreradius/" target="_blank" rel="noopener noreferrer">
-              <Image src="/img/facebook.png" alt="Facebook" width={24} height={24} />
-            </a>
-            <a href="https://www.twitter.com/DescubreRadius/" target="_blank" rel="noopener noreferrer">
-              <Image src="/img/x.png" alt="X" width={24} height={24} />
-            </a>
-            <a href="https://www.linkedin.com/company/descubreradius/" target="_blank" rel="noopener noreferrer">
-              <Image src="/img/linkedin.png" alt="LinkedIn" width={24} height={24} />
-            </a>
-          </div>
-        </div>
-      </div>
+    
+  <div className={styles.footerCopyright}>
+    <div className={styles.textContainer}>
+      <span>© 2024 Radius USA. All Rights Reserved. | </span>
+      <Link href="https://radiustech.us/privacy-policy" className={styles.link}>Privacy Policy</Link>
+      <span className="mx-2">|</span>
+      <Link href="https://radiustech.us/privacy-policy" className={styles.link}>Terms of Use</Link>
     </div>
+    <div className={styles.socialLogos}>
+      <a href="https://www.facebook.com/DescubreRadius/" target="_blank" rel="noopener noreferrer">
+        <Image src="/img/instagram.png" alt="Instagram" width={24} height={24} />
+      </a>
+      <a href="https://www.instagram.com/descubreradius/" target="_blank" rel="noopener noreferrer">
+        <Image src="/img/facebook.png" alt="Facebook" width={24} height={24} />
+      </a>
+      <a href="https://www.twitter.com/DescubreRadius/" target="_blank" rel="noopener noreferrer">
+        <Image src="/img/x.png" alt="X" width={24} height={24} />
+      </a>
+      <a href="https://www.linkedin.com/company/descubreradius/" target="_blank" rel="noopener noreferrer">
+        <Image src="/img/linkedin.png" alt="LinkedIn" width={24} height={24} />
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    
   );
 };
 
