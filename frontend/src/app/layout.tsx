@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'),
   title: {
     default: "Radius",
-    template: "%s | Descubreradius",
+    template: "%s | Discover Radius",
   },
   description: "Digital transformation consulting firm, offering customized services to deliver value to your business from the idea through to a full-scale solution.",
   openGraph: {
