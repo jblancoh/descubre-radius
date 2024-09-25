@@ -312,6 +312,16 @@
     flex-wrap: wrap;
     
   }
+  @media (max-width: 600px) {
+    .solutionsContent {
+      align-content: initial; /* Eliminar el alineamiento */
+      flex-wrap: nowrap; /* Quitar el flex-wrap */
+    }
+  }
+  
+
+
+
   .titlesContainer {
     padding-bottom: 30px;
     text-align: center; /* Centrar el texto */
@@ -665,7 +675,7 @@
     }
   
     .heroTextLeft, .heroInnovation {
-      font-size: 40px;
+      font-size: 30px;
     }
   
     .heroDescription {
