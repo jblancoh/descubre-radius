@@ -12,7 +12,7 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"), // Cambia esto a la URL de producción cuando sea necesario
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: {
     default: "Radius",
     template: "%s | Descubreradius",
