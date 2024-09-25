@@ -68,7 +68,7 @@ const HomePage = () => {
         Unlock the power of artificial intelligence.
       </p>
       <p className="text-white font-archia text-lg md:text-xl mb-4 max-w-[500px]">
-        Combine precision with creativity, offering scalable and relevant insights. Join us on the 'Road to AI' and elevate your expertise.
+        {"Combine precision with creativity, offering scalable and relevant insights. Join us on the 'Road to AI' and elevate your expertise."}
       </p>
       <div className="flex items-center space-x-3 mb-4">
         <span className="text-xs font-light text-white border border-white px-2 rounded-md">
