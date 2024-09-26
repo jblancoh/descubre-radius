@@ -61,6 +61,7 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
             </p>
 
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
+              formData.append('origin', 'masterclass');
               formAction(formData);
             }}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

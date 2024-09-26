@@ -66,6 +66,7 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
           </div>
           <div className="space-y-4 p-8 bg-white rounded-lg">
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
+              formData.append('origin', 'usa');
               formAction(formData);
             }}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
