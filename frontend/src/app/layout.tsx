@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner"
 import NavBar from "@/components/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body>
         {/*<NavBar />*/}
         {children}
+        <Analytics />
         {/* {<Footer /> */}
        <Toaster />
       </body>
