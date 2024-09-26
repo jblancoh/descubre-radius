@@ -47,14 +47,18 @@ const HomePage = () => {
       </header>
 
     {/* Sección del Héroe */}
-<section
-  className="relative bg-cover"
-  style={{
-    backgroundImage: 'url(/img/gifhero.gif)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
->
+    <section className="relative bg-cover">
+  <video
+    className="absolute inset-0 w-full h-full object-cover"
+    autoPlay
+    loop
+    muted
+    controls
+    style={{ zIndex: -1 }} // Mantiene el video detrás del contenido
+  >
+    <source src="/img/videorad.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
   <div className="flex flex-col items-start py-24 px-8 md:p-10 lg:p-12 max-w-[1200px] mx-auto relative z-10">
     <div className="flex flex-col mb-6">
@@ -90,6 +94,7 @@ const HomePage = () => {
     </div>
   </div>
 </section>
+
 
 {/* Sección de Aprendizaje */}
 <section className="py-24 px-8 md:px-12 lg:px-16 bg-black">
