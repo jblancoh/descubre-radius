@@ -25,8 +25,8 @@ module.exports = createCoreController('api::contact-message.contact-message', ({
       await strapi.plugin('email').service('email').send({
         to: process.env.EMAIL_TO_NOTIFICATE,
         from: process.env.EMAIL_USER,
-        subject: `Nuevo mensaje de ${name} - ${company} - ${email || phone} desde ${origin}`,
-        text: message,
+        subject: `Nuevo registro de Contactanos`,
+        text: `Nuevo mensaje de ${name} - ${company} - ${email || phone} desde ${origin}\n\nMensaje:\n\n${message}`,
       });
 
       ctx.send(newMessage);
