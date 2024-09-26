@@ -23,7 +23,7 @@ module.exports = createCoreController('api::contact-message.contact-message', ({
 
       // Opcional: enviar un correo electrónico de notificación
       await strapi.plugin('email').service('email').send({
-        to: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO_NOTIFICATE,
         from: process.env.EMAIL_USER,
         subject: `Nuevo mensaje de ${name} - ${company} - ${email || phone} desde ${originCountry}`,
         text: message,
