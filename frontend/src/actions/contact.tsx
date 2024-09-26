@@ -39,6 +39,10 @@ export const sendContact = async (prevState: any, data: FormData) => {
     company: data.get('company'),
     privacyPolicy: data.get('privacyPolicy')
   })
+  console.log("🚀 ~ sendContact ~ rawData:", rawData)
+  console.log('process.env.NEXT_PUBLIC_API_URL', process.env.NEXT_PUBLIC_API_URL)
+  console.log("🚀 ~ sendContact ~ process.env.STRAPI_API_CONTACT_KEY:", process.env.STRAPI_API_CONTACT_KEY)
+
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
