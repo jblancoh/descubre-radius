@@ -42,9 +42,9 @@ const ContactusMaster = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>(
   useEffect(() => {
     if (state.errors) {
       toast.error('Error sending message');
-    } else if (state.ok) {
-      toast.success('Message sent successfully');
+    } else if (state.id) {
       formRef.current?.reset();
+      toast.success('Message sent successfully');
     }
   }, [state]);
 

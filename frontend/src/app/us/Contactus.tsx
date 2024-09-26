@@ -32,7 +32,7 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
   const [state, formAction] = useFormState(sendContact, initialState);
   const { inputValue, handlePhoneValueChange, country, setCountry } =
     usePhoneInput({
-      defaultCountry: 'us', // Cambiado a 'us'
+      defaultCountry: 'us',
       value: state.phone,
       countries: defaultCountries,
     });
@@ -42,12 +42,12 @@ const Contactus = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props
   useEffect(() => {
     if (state.errors) {
       toast.error('Error sending message');
-    } else if (state.ok) {
-      toast.success('Message sent successfully');
+    } else if (state.id) {
       formRef.current?.reset();
+      toast.success('Message sent successfully');
     }
   }, [state]);
-
+  
   return (
     <div className="bg-black-200 w-full" ref={ref}>
       <div className="container p-8 max-w-[1200px]">
