@@ -39,6 +39,7 @@ export const sendContact = async (prevState: any, data: FormData) => {
     company: data.get('company'),
     privacyPolicy: data.get('privacyPolicy')
   })
+  console.log("🚀 ~ sendContact ~ rawData:", rawData)
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
