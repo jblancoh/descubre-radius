@@ -32,13 +32,13 @@ module.exports = ({env}) => ({
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: 'smtp-mail.outlook.com',
-        port: 587,
+        host: env('EMAIL_HOST'),
+        port: env('EMAIL_PORT'),
         auth: {
           user: env('EMAIL_USER'),
           pass: env('EMAIL_PASSWORD'),
         },
-        secure: false,
+        secure: true,
       },
       settings: {
         defaultFrom: env('EMAIL_USER'),
