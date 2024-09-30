@@ -46,14 +46,14 @@ const HomePage = () => {
         <Image src="/img/logo_rad.png" alt="Logo" width={100} height={50} />
       </header>
 
-    {/* Sección del Héroe */}
-    <section className="relative bg-cover">
+ {/* Sección del Héroe */}
+<section className="relative bg-cover">
   <video
     className="absolute inset-0 w-full h-full object-cover"
     autoPlay
     loop
     muted
-    controls
+    controls={false} // Quitar los controles
     style={{ zIndex: -1 }} // Mantiene el video detrás del contenido
   >
     <source src="/img/videorad.mp4" type="video/mp4" />

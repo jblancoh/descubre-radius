@@ -156,7 +156,7 @@ const HomePage = () => {
 
       <section className={styles.brandsSection}>
         <h2 className={styles.brandsTitle}>
-          Brands that have trusted us <span className={styles.trustedUs}>us</span>
+          Brands that have trusted <span className={styles.trustedUs}>us</span>
         </h2>
         <div className={styles.gallery}>
           <div className={styles.logos}>
