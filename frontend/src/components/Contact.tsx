@@ -58,8 +58,11 @@ const Contact:FC = () => {
           </div>
           <div>
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
-              formAction(formData)
-              if (state.errors) return toast.error('Error al enviar mensaje')
+              await formAction(formData)
+              if (state.errors) {
+                toast.error('Error al enviar mensaje')
+                return
+              }
               toast.success('Mensaje enviado correctamente')
               formRef.current?.reset()
             }}>
