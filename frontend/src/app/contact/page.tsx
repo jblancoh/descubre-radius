@@ -69,13 +69,13 @@ const Page:FC = () => {
           </div>
           <div>
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
-              await formAction(formData)
-                if (state.errors) {
-                  toast.error('Error al enviar mensaje')
-                  return
-                }
-                toast.success('Mensaje enviado correctamente')
-                formRef.current?.reset()
+              const result = await formAction(formData)
+              if (state.errors) {
+                toast.error('Error al enviar mensaje')
+                return
+              }
+              toast.success('Mensaje enviado correctamente')
+              formRef.current?.reset()
             }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col">
