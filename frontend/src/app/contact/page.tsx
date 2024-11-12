@@ -69,8 +69,12 @@ const Page:FC = () => {
           </div>
           <div>
             <form ref={formRef} className="space-y-4" action={async (formData: FormData) => {
-               formAction(formData)
-                if (state.errors) return toast.error('Error al enviar mensaje')
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-await
+              await formAction(formData)
+                if (state.errors) {
+                  toast.error('Error al enviar mensaje')
+                  return
+                }
                 toast.success('Mensaje enviado correctamente')
                 formRef.current?.reset()
             }}>
